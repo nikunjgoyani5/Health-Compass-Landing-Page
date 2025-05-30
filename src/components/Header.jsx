@@ -24,7 +24,7 @@ const Header = () => {
   const isActive = (path) => pathname.includes(path);
   return (
     <>
-      <header className="w-full sticky top-0  z-[50] ">
+      <header className="w-full sticky top-0  z-[50] bg-spring-wood ">
         {/* <div className="bg-primary mx-auto px-4">
           <div className="py-2  text-xs text-white flex justify-center items-center font-semibold">
             <p>
