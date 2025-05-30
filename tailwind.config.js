@@ -13,6 +13,7 @@ module.exports = {
         "gray-blue": "#5d6481",
         "dark-teal-blue": "#03273C",
         alabaster: "#FBFAF8",
+        "spring-wood": "#FBF6ED",
       },
       height: {
         hero: "calc(100vh - 125px)",
