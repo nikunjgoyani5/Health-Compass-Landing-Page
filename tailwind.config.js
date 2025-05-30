@@ -12,6 +12,7 @@ module.exports = {
         "text-light": "hsl(var(--text-light))",
         "gray-blue": "#5d6481",
         "dark-teal-blue": "#03273C",
+        alabaster: "#FBFAF8",
       },
       height: {
         hero: "calc(100vh - 125px)",
