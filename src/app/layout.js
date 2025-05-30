@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         {/* <AOSInitializer /> */}
         <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
 
         {/* 📌 Meta Pixel Script */}
         <Script
