@@ -57,7 +57,7 @@ const HealthCompanion = ({ className }) => {
           </div>
 
           {/* Main Content Block with light green background */}
-          <div className="flex max-w-[500px] md:max-w-[90%] gap-10 flex-col md:flex-row items-center bg-[#2D918C1A] rounded-lg p-6 md:p-4 mx-auto shadow-xl">
+          <div className="flex max-w-[500px] md:max-w-full xl:max-w-[90%] gap-10 flex-col md:flex-row items-center bg-[#2D918C1A] rounded-lg p-6 md:p-4 mx-auto shadow-xl">
             {/* Image Section */}
             <div className="w-full">
               <Image
@@ -73,7 +73,7 @@ const HealthCompanion = ({ className }) => {
 
             {/* Text and Button Section */}
             <div className="w-full text-start md:text-left">
-              <h3 data-aos="fade-up" className=" font-medium mb-5 sm:mb-8 text-[#004D49] text-[26px] md:text-[44px] lg:text-[45px] leading-tight">
+              <h3 data-aos="fade-up" className=" font-medium mb-5 sm:mb-8 text-[#004D49] text-[26px] md:text-[34px] lg:text-[45px] leading-tight">
                 Your Best AI Health Companion
               </h3>
               {/* Optional: Add a small description here if needed, based on design */}
@@ -81,7 +81,7 @@ const HealthCompanion = ({ className }) => {
               <button
               data-aos="fade-up" data-aos-delay="300"
                 onClick={handleOpenForm}
-                className="bg-dark-primary text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold  hover:bg-primary transition-colors"
+                className="bg-dark-primary text-white px-6 py-3 rounded-full text-sm lg:text-base font-semibold  hover:bg-primary transition-colors"
               >
                 Request Early Access
               </button>
