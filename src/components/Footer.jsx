@@ -7,7 +7,7 @@ import { footerData, socialData } from "@/data/footerData";
 export default function Footer() {
   return (
     <footer className="bg-dark-teal-blue text-white pt-6 pb-4 rounded-t-lg">
-      <div className="container mx-auto px-4">
+      <div className="main-container mx-auto">
         <div className=" ">
           {/* Left Column: Logo, Title, Contact */}
           <div className="">
@@ -17,16 +17,16 @@ export default function Footer() {
                 alt="Health Compass Logo"
                 width={321}
                 height={74}
-                className="mb-2"
+                className="mb-2 w-full max-w-[250px] md:max-w-[321px]"
               />
             </a>
           </div>
 
           {/* Right Column: Terms, Privacy, Social */}
-          <div className="flex justify-between mt-14">
-            <div className="text-sm text-alabaster font-normal">
+          <div className="flex gap-3 flex-col sm:flex-row items-start sm:justify-between mt-8 sm:mt-14">
+            <a href="mailto:contact@gohealthcompass.com" className="text-sm text-alabaster font-normal">
               contact@gohealthcompass.com
-            </div>
+            </a>
             <div className="flex flex-row gap-4 mb-1 justify-end">
               <Link
                 target="_blank"

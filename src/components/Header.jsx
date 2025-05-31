@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Images } from "@/data/images";
 import { navItems } from "@/data/navItems";
@@ -13,6 +13,7 @@ import { ROUTES } from "@/constants/route";
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname(); // ✅ get current path
 
   const handleCloseMenu = useCallback(() => setMobileMenuOpen(false), []);
@@ -22,9 +23,20 @@ const Header = () => {
   const handleCloseModal = useCallback(() => setIsModal(false), []);
 
   const isActive = (path) => pathname.includes(path);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = window.innerWidth < 768 ? 0 : 100; // 30px for small, 100px for md+
+      setIsScrolled(window.scrollY > threshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <header className="w-full sticky top-0  z-[50] bg-spring-wood ">
+      <header className="w-full fixed top-0  z-[50] bg-transparent ">
         {/* <div className="bg-primary mx-auto px-4">
           <div className="py-2  text-xs text-white flex justify-center items-center font-semibold">
             <p>
@@ -33,9 +45,13 @@ const Header = () => {
             </p>
           </div>
         </div> */}
-        <nav className="relative top-0">
+        <nav
+          className={`relative z-[50] main-container transition-colors duration-300 rounded-b-xl ${
+            isScrolled ? "bg-white shadow-md" : "bg-transparent"
+          }`}
+        >
           <div className="relative">
-            <div className="container mx-auto px-4 py-4">
+            <div className="container mx-auto py-4">
               <div className="flex justify-between items-center">
                 <Link href="/" className="flex items-center">
                   <img

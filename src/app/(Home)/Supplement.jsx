@@ -40,11 +40,11 @@ const Supplement = () => {
   return (
     <section className="section-p-y main-container scroll-smooth">
       <div className="max-w-[850px] mx-auto">
-        <h1 className="text-center text-[38px] md:text-[44px] lg:text-[52px] font-semibold text-black leading-tight mb-4">
+        <h1 className="text-center text-[26px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
           Smarter <span className="text-primary">Supplement</span> Tracking for
           a Healthier You
         </h1>
-        <span className="text-md md:text-xl text-davy-gray text-center block px-10">
+        <span className="text-[13px] md:text-lg text-davy-gray text-center block md:px-10">
           Easily manage your daily vitamins and supplements with our intelligent
           tracking system. Get personalized health reminders, monitor your
           intake history, and keep loved ones informed—designed for busy

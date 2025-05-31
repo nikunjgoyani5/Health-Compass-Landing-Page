@@ -126,12 +126,12 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative overflow-hidden section-container px-6 bg-lightBeige py-16">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative overflow-hidden section-container bg-spring-wood section-p-y">
+      <div className="mx-auto main-container">
         {/* Title Row */}
-        <div className="flex items-center justify-between mb-2 px-2 md:px-0 relative mx-auto">
+        <div className="flex items-center justify-between mb-2 relative mx-auto">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-2 relative z-10">
+            <h2 className="text-[26px] md:text-[44px] lg:text-[48px] font-medium mb-2 relative z-10">
               Real <span className="text-dark-primary">Stories</span>, Real
               <span className="relative inline-block ml-1 text-dark-primary">
                 Results
@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
                 />
               </span>
             </h2>
-            <p className="text-[#535252] text-base max-w-xl mt-1">
+            <p className="text-[#535252] text-[13px] sm:text-base max-w-xl mt-1">
               Trusted by thousands of users—from active seniors to busy
               caregivers—HealthCompass makes wellness tracking simple, smart,
               and personal.
@@ -152,7 +152,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex gap-3 items-center">
+          <div className="hidden sm:flex gap-3 items-center">
             <button
               disabled={isBeginning}
               ref={prevRef}
