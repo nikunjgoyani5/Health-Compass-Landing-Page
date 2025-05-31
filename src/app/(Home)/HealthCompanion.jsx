@@ -23,7 +23,7 @@ const HealthCompanion = () => {
         />
 
         <Image
-          src={Images.other.healthCompanionRight}
+          src={Images.other.healthCompanionLeft}
           alt="Pattern Left Bottom"
           width={200}
           height={200}

@@ -35,6 +35,7 @@ const VideoPlayer = ({ isOpen, onHide }) => {
           //   allowFullScreen
           // ></iframe>
           <video
+          autoPlay
             controls
             controlsList="nodownload"
             className="video rounded-xl overflow-hidden px-4"
