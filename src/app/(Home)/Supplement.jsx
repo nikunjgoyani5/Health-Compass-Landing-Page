@@ -100,7 +100,7 @@ const Supplement = () => {
                   }`}
                 >
                   <h3 className="lg:text-xl mb-2">{item.title}</h3>
-                  <p className="text-xs lg:text-sm">
+                  <p className="text-xs lg:text-sm text-gray-500">
                     {item.title === "Supplement Tracking"
                       ? "Track what you take and when"
                       : item.title === "AI Health Assistant"
