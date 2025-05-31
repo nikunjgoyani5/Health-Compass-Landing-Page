@@ -37,9 +37,9 @@ const Header = () => {
   return (
     <>
       <div className="bg-primary mx-auto px-4">
-        <div className="py-2  text-xs text-white flex justify-center items-center font-semibold">
+        <div className="py-2 text-[10px] sm:text-xs text-white flex justify-center items-center font-semibold">
           <p className="text-center">
-            25,000+ Supplement Insights
+            <b>25,000+ Supplement Insights</b>
             <span>
               - Explore one of the world’s largest AI-powered supplement
               databases — personalized for your needs.”{" "}
@@ -47,7 +47,11 @@ const Header = () => {
           </p>
         </div>
       </div>
-      <header className={`w-full ${isScrolled ? "top-[0px]" : "top-[0px]"} sticky bg-transparent  z-[50] transition-all`}>
+      <header
+        className={`w-full ${
+          isScrolled ? "top-[0px]" : "top-[0px]"
+        } sticky bg-transparent  z-[50] transition-all`}
+      >
         <nav
           className={`relative w-full z-[50] main-container transition-colors duration-300 rounded-b-xl ${
             isScrolled ? "bg-white shadow-md" : "bg-transparent"
