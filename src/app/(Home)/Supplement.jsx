@@ -102,22 +102,24 @@ const Supplement = () => {
 
           {/* Right Side - Images */}
           <div className="relative flex flex-col gap-5 md:gap-10">
-            {data.map((item, index) => (
-              <div
-                key={index}
-                id={item.url}
-                ref={(el) => (sectionRefs.current[item.url] = el)}
-                className="border-b pb-5 md:pb-10"
-              >
-                <span className="supplement-image block rounded-lg">
-                  <img
-                    className="w-full h-full"
-                    src={item.image}
-                    alt={item.title}
-                  />
-                </span>
-              </div>
-            ))}
+            <div>
+              {data.map((item, index) => (
+                <div
+                  key={index}
+                  id={item.url}
+                  ref={(el) => (sectionRefs.current[item.url] = el)}
+                  className="border-b pb-5 md:pb-10"
+                >
+                  <span className="supplement-image block rounded-lg">
+                    <img
+                      className="w-full h-full"
+                      src={item.image}
+                      alt={item.title}
+                    />
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

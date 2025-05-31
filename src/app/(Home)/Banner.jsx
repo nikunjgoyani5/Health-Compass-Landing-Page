@@ -68,17 +68,14 @@ const Banner = () => {
             <div className="relative md:ps-5">
               <span className="relative block mx-auto banner-content rounded-xl overflow-hidden">
                 {isVideo ? (
-                  <span>
+                  <span onClick={handleOpen} className="cursor-pointer">
                     <img
                       style={{ objectFit: "cover", objectPosition: "top" }}
                       src={Images.banner}
                       className="mx-auto relative z-[1] w-full h-full"
                       alt="Banner"
                     />
-                    <button
-                      onClick={handleOpen}
-                      className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-white/15 backdrop-blur-[64px] px-4 sm:px-2 py-1 sm:py-1 rounded-xl m-4 play-animation"
-                    >
+                    <button className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-white/15 backdrop-blur-[64px] px-4 sm:px-2 py-1 sm:py-1 rounded-xl m-4 play-animation">
                       <Play size={24} />
                       <span className="text-start">
                         <span className="block text-sm sm:text-base">

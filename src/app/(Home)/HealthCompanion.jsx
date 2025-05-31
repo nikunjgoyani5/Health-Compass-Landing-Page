@@ -5,14 +5,16 @@ import Image from "next/image";
 import { Images } from "@/data/images";
 import MailchimpForm from "@/components/MailChimpForm";
 
-const HealthCompanion = () => {
+const HealthCompanion = ({ className }) => {
   const [isForm, setIsForm] = useState(false);
 
   const handleOpenForm = useCallback(() => setIsForm(true), []);
   const handleCloseForm = useCallback(() => setIsForm(false), []);
   return (
     <>
-      <section className="section-p-b bg-white  md:pt-10 relative overflow-hidden">
+      <section
+        className={`bg-white  md:pt-10 relative overflow-hidden ${className}`}
+      >
         {/* Background patterns - positioning needs refinement */}
         <Image
           src={Images.other.healthCompanionRight}
@@ -47,7 +49,7 @@ const HealthCompanion = () => {
               made simple.
               <span className="relative inline-block text-dark-primary"></span>{" "}
             </h2>
-            <p className="text-[13px] md:text-lg text-davy-gray text-center block md:px-10 mb-12 line-clamp-3">
+            <p className="text-[13px] md:text-lg text-davy-gray text-center block md:px-10 mb-8 sm:mb-12 line-clamp-3">
               Get easy-to-follow tips, smart supplement suggestions, and daily
               check-ins, powered by AI. A clear path to better health, right in
               your pocket.
@@ -55,9 +57,9 @@ const HealthCompanion = () => {
           </div>
 
           {/* Main Content Block with light green background */}
-          <div className="flex flex-col md:flex-row items-center bg-[#2D918C1A] rounded-lg p-6 md:p-4 max-w-4xl mx-auto shadow-xl">
+          <div className="flex max-w-[500px] md:max-w-[90%] gap-10 flex-col md:flex-row items-center bg-[#2D918C1A] rounded-lg p-6 md:p-4 mx-auto shadow-xl">
             {/* Image Section */}
-            <div className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-8">
+            <div className="w-full">
               <Image
                 src={Images.other.healthCompanionCenter} // Replace with actual screenshot image path
                 alt="Dashboard Screenshot"
@@ -69,8 +71,8 @@ const HealthCompanion = () => {
             </div>
 
             {/* Text and Button Section */}
-            <div className="w-full md:w-1/2 text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-[#004D49]">
+            <div className="w-full text-start md:text-left">
+              <h3 className=" font-medium mb-8 text-[#004D49] text-[26px] md:text-[44px] lg:text-[45px] leading-tight">
                 Your Best AI Health Companion
               </h3>
               {/* Optional: Add a small description here if needed, based on design */}

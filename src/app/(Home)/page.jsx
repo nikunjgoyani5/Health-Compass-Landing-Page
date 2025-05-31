@@ -8,8 +8,9 @@ const page = () => {
   return (
     <main>
       <Banner />
+      <HealthCompanion className="section-p-t block md:hidden" />
       <Supplement />
-      <HealthCompanion />
+      <HealthCompanion className="section-p-b hidden md:block"/>
       <TestimonialsSection />
     </main>
   );
