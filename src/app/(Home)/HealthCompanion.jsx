@@ -23,11 +23,11 @@ const HealthCompanion = () => {
         />
 
         <Image
-          src={Images.other.healthCompanionLeft}
+          src={Images.other.healthCompanionRight}
           alt="Pattern Left Bottom"
           width={200}
           height={200}
-          className="hidden md:block absolute bottom-0 left-0 opacity-50 z-0"
+          className="hidden md:block absolute bottom-0 left-0 opacity-50 z-0 rotate-[180deg]"
         />
 
         <div className="main-container mx-auto text-center relative z-10">
