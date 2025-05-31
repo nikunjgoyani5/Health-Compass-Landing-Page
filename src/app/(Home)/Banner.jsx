@@ -75,9 +75,9 @@ const Banner = () => {
                       className="mx-auto relative z-[1] w-full h-full"
                       alt="Banner"
                     />
-                    <button className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-white/15 backdrop-blur-[64px] px-2 sm:px-2 py-1 sm:py-1 rounded-xl m-4 play-animation">
+                    <button className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-black/10 sm:bg-white/15 backdrop-blur-[64px] px-4 sm:px-2 py-3 sm:py-1 rounded-xl m-4 play-animation">
                       <Play size={24} />
-                      <span className="text-start">
+                      <span className="text-start hidden sm:block">
                         <span className="block text-sm sm:text-base">
                           Watch Demo
                         </span>
@@ -90,7 +90,7 @@ const Banner = () => {
                     ref={videoRef}
                     onEnded={handleVideoEnd}
                     autoPlay
-                    muted
+                    // muted
                     controls
                     controlsList="nodownload"
                     className="h-full w-full object-cover"
