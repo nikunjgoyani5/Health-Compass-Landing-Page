@@ -131,7 +131,7 @@ export default function TestimonialsSection() {
         {/* Title Row */}
         <div className="flex items-center justify-between mb-2 relative mx-auto">
           <div>
-            <h2 className="text-[32px] md:text-[44px] lg:text-[48px] font-medium mb-2 relative z-10">
+            <h2 data-aos="fade-up" className="text-[32px] md:text-[44px] lg:text-[48px] font-medium mb-2 relative z-10">
               Real <span className="text-dark-primary">Stories</span>, Real
               <span className="relative inline-block ml-1 text-dark-primary">
                 Results
@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
                 />
               </span>
             </h2>
-            <p className="text-[#535252] text-[13px] sm:text-base max-w-xl mt-1">
+            <p data-aos="fade-up" data-aos-delay="300" className="text-[#535252] text-[13px] sm:text-base max-w-xl mt-1">
               Trusted by thousands of users—from active seniors to busy
               caregivers—HealthCompass makes wellness tracking simple, smart,
               and personal.
@@ -152,7 +152,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="hidden sm:flex gap-3 items-center">
+          <div data-aos="fade-up" data-aos-delay="300" className="hidden sm:flex gap-3 items-center">
             <button
               disabled={isBeginning}
               ref={prevRef}

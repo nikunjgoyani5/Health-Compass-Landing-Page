@@ -48,16 +48,44 @@
   }
 
   .main-container {
-    @apply max-w-[1440px] mx-auto px-4;
+    @apply max-w-[1440px] mx-auto px-5;
   }
 
-  /* @media (max-width: 1220px) {
+  @media (max-width: 1500) {
     .main-container {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      max-width: 500px; 
+      max-width: 1300; 
     }
-  } */
+  }
+
+  @media (max-width: 1400) {
+    .main-container {
+      max-width: 1200; 
+    }
+  }
+
+  @media (max-width: 1300) {
+    .main-container {
+      max-width: 1100; 
+    }
+  }
+
+  @media (max-width: 1200) {
+    .main-container {
+      max-width: 1000; 
+    }
+  }
+
+  @media (max-width: 1000) {
+    .main-container {
+      max-width: 900; 
+    }
+  }
+
+  @media (max-width: 900) {
+    .main-container {
+      max-width: 800; 
+    }
+  }
 
   .backdrop-blur-xs {
     --tw-backdrop-blur: blur(2px);

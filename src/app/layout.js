@@ -6,6 +6,7 @@ import { Images } from "@/data/images";
 import { createMetadata } from "@/helpers/commonHelpers";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import AOSInitializer from "@/components/AOSInitializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <AOSInitializer /> */}
+        <AOSInitializer />
         <Header />
         {children}
         <Footer />

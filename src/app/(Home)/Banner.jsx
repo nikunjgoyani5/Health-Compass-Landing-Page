@@ -31,7 +31,7 @@ const Banner = () => {
         <div className="main-container section-p-y">
           <div className="grid items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
             <div>
-              <h1 className="text-[32px]  md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
+              <h1 data-aos="fade-up" className="text-[32px]  md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
                 Tired of{" "}
                 <span className="text-primary relative">
                   feeling{" "}
@@ -45,11 +45,11 @@ const Banner = () => {
                 </span>{" "}
                 stuck with your health issues?
               </h1>
-              <span className="text-sm sm:text-md md:text-lg text-davy-gray">
+              <span data-aos="fade-up" data-aos-delay="300" className="text-sm block sm:text-md md:text-lg text-davy-gray">
                 Join our early access to discover a smarter way to feel better.
               </span>
 
-              <div className="flex mt-6 mb-4 sm:mb-10 md:mb-0 sm:mt-10 md:mt-12 bg-white shadow-md rounded-md overflow-hidden max-w-[500px]">
+              <div data-aos="fade-up"  data-aos-delay="500" className="flex mt-6 mb-4 sm:mb-10 md:mb-0 sm:mt-10 md:mt-12 bg-white shadow-md rounded-md overflow-hidden max-w-[500px]">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -70,6 +70,7 @@ const Banner = () => {
                 {isVideo ? (
                   <span onClick={handleOpen} className="cursor-pointer">
                     <img
+                      data-aos="zoom-out"
                       style={{ objectFit: "cover", objectPosition: "top" }}
                       src={Images.banner}
                       className="mx-auto relative z-[1] w-full h-full"
@@ -81,7 +82,7 @@ const Banner = () => {
                         <span className="block text-sm sm:text-base">
                           Watch Demo
                         </span>
-                        <span className="text-xs sm:text-sm">2 min</span>
+                        <span className="text-xs sm:text-sm">2 min</span> 
                       </span>
                     </button>
                   </span>
