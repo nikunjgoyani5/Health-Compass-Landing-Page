@@ -1,25 +1,32 @@
 "use client";
 
 import { Images } from "@/data/images";
-import React, { useCallback, useState } from "react";
-import VideoPlayer from "@/components/VideoPlayer";
+import React, { useCallback, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import MailchimpForm from "@/components/MailChimpForm";
 
 const Banner = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isForm, setIsForm] = useState(false);
   const [isVideo, setIsVideo] = useState(true);
+  const videoRef = useRef(null);
 
-  const handleOpen = useCallback(() => setIsOpen(true), []);
-  const handleClose = useCallback(() => setIsOpen(false), []);
+  const handleOpen = useCallback(() => {
+    setIsVideo(false);
+    setTimeout(() => {
+      videoRef.current?.play();
+    }, 100);
+  }, []);
+
+  const handleVideoEnd = useCallback(() => {
+    setIsVideo(true); // Reset to show image again
+  }, []);
 
   const handleOpenForm = useCallback(() => setIsForm(true), []);
   const handleCloseForm = useCallback(() => setIsForm(false), []);
+
   return (
     <>
       <section className="bg-spring-wood">
-        {/* <section className="bg-spring-wood pt-[80px] sm:pt-[93px]"> */}
         <div className="main-container section-p-y">
           <div className="grid items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
             <div>
@@ -30,7 +37,7 @@ const Banner = () => {
               <span className="text-sm sm:text-md md:text-lg text-davy-gray">
                 Join our early access to discover a smarter way to feel better.
               </span>
-              {/* <form> */}
+
               <div className="flex mt-6 mb-4 sm:mb-10 md:mb-0 sm:mt-10 md:mt-12 bg-white shadow-md rounded-md overflow-hidden max-w-[500px]">
                 <input
                   type="email"
@@ -45,20 +52,21 @@ const Banner = () => {
                   Get Early Access
                 </button>
               </div>
-              {/* </form> */}
             </div>
+
             <div className="relative md:ps-5">
               <span className="relative block mx-auto banner-content rounded-xl overflow-hidden">
                 {isVideo ? (
                   <span>
                     <img
+                      style={{ objectFit: "cover", objectPosition: "top" }}
                       src={Images.banner}
-                      className="mx-auto relative z-[1] w-full h-full "
-                      alt=""
+                      className="mx-auto relative z-[1] w-full h-full"
+                      alt="Banner"
                     />
                     <button
                       onClick={handleOpen}
-                      className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 md:right-auto md:left-0 z-[1] text-white font-semibold bg-white/10 backdrop-blur-[44px] px-4 sm:px-6 py-1 sm:py-2 rounded-xl m-4 play-animation"
+                      className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-white/15 backdrop-blur-[64px] px-4 sm:px-2 py-1 sm:py-1 rounded-xl m-4 play-animation"
                     >
                       <Play size={24} />
                       <span className="text-start">
@@ -67,12 +75,22 @@ const Banner = () => {
                         </span>
                         <span className="text-xs sm:text-sm">2 min</span>
                       </span>
-                    </button>{" "}
+                    </button>
                   </span>
                 ) : (
-                  <video autoplay muted controlsList="nodownload" controls className="h-full w-full object-cover" src="/video.mp4"></video>
+                  <video
+                    ref={videoRef}
+                    onEnded={handleVideoEnd}
+                    autoPlay
+                    muted
+                    controls
+                    controlsList="nodownload"
+                    className="h-full w-full object-cover"
+                    src="/video.mp4"
+                  />
                 )}
               </span>
+
               <img
                 src={Images.pattern}
                 className="absolute hidden sm:block bottom-[-60px] z-[0]"
@@ -87,7 +105,7 @@ const Banner = () => {
           </div>
         </div>
       </section>
-      {/* <VideoPlayer isOpen={isOpen} onHide={handleClose} /> */}
+
       <MailchimpForm isOpen={isForm} onHide={handleCloseForm} />
     </>
   );
