@@ -15,7 +15,7 @@ const HealthCompanion = () => {
       <section className="section-p-b  md:pt-10 relative overflow-hidden">
         {/* Background patterns - positioning needs refinement */}
         <Image
-          src={Images.other.healthCompanionRight}
+          src={Images.other.healthCompanionLeft}
           alt="Pattern Right Top"
           width={200}
           height={200}
