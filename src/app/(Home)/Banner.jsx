@@ -49,7 +49,7 @@ const Banner = () => {
             </div>
             <div className="relative md:ps-5">
               <span className="relative block mx-auto banner-content rounded-xl overflow-hidden">
-                {!isVideo ? (
+                {isVideo ? (
                   <span>
                     <img
                       src={Images.banner}
