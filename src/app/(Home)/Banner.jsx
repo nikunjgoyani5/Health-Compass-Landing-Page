@@ -4,6 +4,7 @@ import { Images } from "@/data/images";
 import React, { useCallback, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import MailchimpForm from "@/components/MailChimpForm";
+import Image from "next/image";
 
 const Banner = () => {
   const [isForm, setIsForm] = useState(false);
@@ -30,9 +31,19 @@ const Banner = () => {
         <div className="main-container section-p-y">
           <div className="grid items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
             <div>
-              <h1 className="text-[32px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
-                Tired of <span className="text-primary">feeling</span> stuck
-                with your health issues?
+              <h1 className="text-[32px]  md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
+                Tired of{" "}
+                <span className="text-primary relative">
+                  feeling{" "}
+                  <Image
+                    src={Images.other.titlePattern}
+                    width={175}
+                    height={12}
+                    alt="title pattern"
+                    className="absolute left-0 mt-[-4px]"
+                  />
+                </span>{" "}
+                stuck with your health issues?
               </h1>
               <span className="text-sm sm:text-md md:text-lg text-davy-gray">
                 Join our early access to discover a smarter way to feel better.

@@ -33,9 +33,9 @@ const HealthCompanion = () => {
         <div className="main-container mx-auto text-center relative z-10">
           <div className="max-w-[850px] mx-auto">
             <h2 className="text-center text-[26px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
-              Your <span className="text-primary">health</span> made simple.
-              {/* <span className="relative inline-block text-dark-primary">
-                AI-Powered
+              Your{" "}
+              <span className="text-primary relative">
+                health{" "}
                 <Image
                   src={Images.other.titlePattern}
                   width={175}
@@ -44,7 +44,8 @@ const HealthCompanion = () => {
                   className="absolute left-0"
                 />
               </span>{" "}
-              Health Companion */}
+              made simple.
+              <span className="relative inline-block text-dark-primary"></span>{" "}
             </h2>
             <p className="text-[13px] md:text-lg text-davy-gray text-center block md:px-10 mb-12 line-clamp-3">
               Get easy-to-follow tips, smart supplement suggestions, and daily

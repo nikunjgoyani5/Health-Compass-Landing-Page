@@ -140,7 +140,7 @@ export default function TestimonialsSection() {
                   width={175}
                   height={12}
                   alt="title pattern"
-                  className="absolute left-0  w-full "
+                  className="absolute left-0 mt-[-4px]"
                 />
               </span>
             </h2>

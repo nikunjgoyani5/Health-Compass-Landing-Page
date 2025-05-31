@@ -1,6 +1,7 @@
 "use client";
 
 import { Images } from "@/data/images";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 const Supplement = () => {
@@ -43,7 +44,16 @@ const Supplement = () => {
         <div className="max-w-[850px] mx-auto">
           <h1 className="text-center text-[26px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
             Your daily wellness,{" "}
-            <span className="text-primary">Organized Smarter</span>{" "}
+            <span className="text-primary relative">
+              Organized{" "}
+              <Image
+                src={Images.other.titlePattern}
+                width={175}
+                height={12}
+                alt="title pattern"
+                className="absolute right-0 mt-[-4px]"
+              />
+            </span>{" "}
           </h1>
           <span className="text-[13px] md:text-lg text-davy-gray text-center block md:px-10">
             No more sticky notes or missed doses. Our supplement tracker helps
