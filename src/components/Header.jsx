@@ -26,7 +26,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const threshold = window.innerWidth < 768 ? 0 : 100; // 30px for small, 100px for md+
+      const threshold = window.innerWidth < 768 ? 0 : 20; // 30px for small, 100px for md+
       setIsScrolled(window.scrollY > threshold);
     };
 

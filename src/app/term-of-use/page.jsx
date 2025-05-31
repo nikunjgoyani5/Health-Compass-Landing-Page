@@ -2,10 +2,10 @@ import React from 'react';
 
 const TermOfUse = () => {
   return (
-    <div className="min-h-screen bg-amber-50 py-6 sm:py-10 px-4 sm:px-6 lg:px-16">
+    <div className="min-h-screen bg-amber-50 py-6 sm:py-10 px-4 sm:px-6 lg:px-16 pt-[100px] sm:pt-[120px]">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
-        <div className="mb-4 sm:mb-6">
+        <div className="mb-1 sm:mb-6">
           <a href="/" className="text-teal-700 hover:underline flex items-center text-sm sm:text-base">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />

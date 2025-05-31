@@ -54,12 +54,12 @@ const Banner = () => {
                 />
                 <button
                   onClick={handleOpen}
-                  className="flex items-center gap-3 absolute top-0 left-0 z-[1] text-white font-semibold bg-white/10 backdrop-blur-[44px] px-6 py-2 rounded-xl m-4 play-animation"
+                  className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 md:right-auto md:left-0 z-[1] text-white font-semibold bg-white/10 backdrop-blur-[44px] px-4 sm:px-6 py-1 sm:py-2 rounded-xl m-4 play-animation"
                 >
                   <Play size={24} />
                   <span className="text-start">
-                    <span className="block">Watch Demo</span>
-                    <span className="text-sm">2 min</span>
+                    <span className="block text-sm sm:text-base">Watch Demo</span>
+                    <span className="text-xs sm:text-sm">2 min</span>
                   </span>
                 </button>
               </span>
