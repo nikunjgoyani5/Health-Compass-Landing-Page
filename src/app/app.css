@@ -56,7 +56,7 @@
   }
 
   .banner-content {
-    @apply h-[72vh] min-h-[500px]  aspect-[10/11] bg-black/10 backdrop-blur-[44px] relative z-[1];
+    @apply  max-w-[400px] lg:max-w-full md:h-[72vh] md:min-h-[500px]  aspect-[10/11] bg-black/10 backdrop-blur-[44px] relative z-[1];
     /* @apply max-w-[450px] md:max-w-[600px] w-full  aspect-[10/11] bg-black/10 backdrop-blur-[44px] relative z-[1]; */
   }
 
