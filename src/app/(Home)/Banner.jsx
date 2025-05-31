@@ -25,7 +25,7 @@ const Banner = () => {
             <div>
               <h1 className="text-[32px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
                 Tired of <span className="text-primary">feeling</span> stuck
-                with your health?
+                with your health issues?
               </h1>
               <span className="text-sm sm:text-md md:text-lg text-davy-gray">
                 Join our early access to discover a smarter way to feel better.
