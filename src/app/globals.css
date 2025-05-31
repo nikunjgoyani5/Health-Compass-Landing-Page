@@ -48,7 +48,7 @@
   }
 
   .main-container {
-    @apply max-w-[1440px] mx-auto px-5;
+    @apply max-w-[1440px] mx-auto px-4;
   }
 
   @media (max-width: 1500) {
