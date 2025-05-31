@@ -24,8 +24,11 @@ export default function Footer() {
 
           {/* Right Column: Terms, Privacy, Social */}
           <div className="flex gap-3 flex-col sm:flex-row items-start sm:justify-between mt-8 sm:mt-14">
-            <a href="mailto:contact@gohealthcompass.com" className="text-sm text-alabaster font-normal">
-              contact@gohealthcompass.com
+            <a
+              href="mailto:contact@gohealthcompass.com"
+              className="text-sm text-alabaster font-normal md:ms-3"
+            >
+              <b>Contact Us:</b> contact@gohealthcompass.com
             </a>
             <div className="flex flex-row gap-4 mb-1 justify-end">
               <Link
@@ -33,14 +36,14 @@ export default function Footer() {
                 href="/term-of-use"
                 className="text-sm text-alabaster font-normal"
               >
-                Terms of Use
+                <b>Terms of Use</b>
               </Link>
               <Link
                 target="_blank"
                 href="/privacy-policy"
                 className="text-sm text-alabaster font-normal"
               >
-                Privacy Policy
+                <b>Privacy Policy</b>
               </Link>
             </div>
           </div>
