@@ -12,7 +12,7 @@ const HealthCompanion = () => {
   const handleCloseForm = useCallback(() => setIsForm(false), []);
   return (
     <>
-      <section className="section-p-b  md:pt-10 relative overflow-hidden">
+      <section className="section-p-b bg-white  md:pt-10 relative overflow-hidden">
         {/* Background patterns - positioning needs refinement */}
         <Image
           src={Images.other.healthCompanionRight}
@@ -32,11 +32,10 @@ const HealthCompanion = () => {
 
         <div className="main-container mx-auto text-center relative z-10">
           <div className="max-w-[850px] mx-auto">
-          <h2 className="text-center text-[26px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
-              Meet Your{" "}
-              <span className="relative inline-block text-dark-primary">
+            <h2 className="text-center text-[26px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
+              Your <span className="text-primary">health</span> made simple.
+              {/* <span className="relative inline-block text-dark-primary">
                 AI-Powered
-                {/* Line image below text */}
                 <Image
                   src={Images.other.titlePattern}
                   width={175}
@@ -45,13 +44,12 @@ const HealthCompanion = () => {
                   className="absolute left-0"
                 />
               </span>{" "}
-              Health Companion
+              Health Companion */}
             </h2>
             <p className="text-[13px] md:text-lg text-davy-gray text-center block md:px-10 mb-12 line-clamp-3">
-              Get real-time health insights, smart supplement reminders, and
-              personalized wellness suggestions—all powered by cutting-edge AI.
-              Whether you're tracking your vitamins or improving your daily
-              habits, our intelligent assistant helps you stay one step ahead.
+              Get easy-to-follow tips, smart supplement suggestions, and daily
+              check-ins, powered by AI. A clear path to better health, right in
+              your pocket.
             </p>
           </div>
 

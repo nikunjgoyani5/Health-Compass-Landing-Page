@@ -21,7 +21,7 @@ export const Images = {
     ctaBanner: "/other/ctaBanner.webp",
     simpleToolsBg: "/other/simpleToolsBg.webp",
     play: "/other/play.webp",
-    healthCompanionLeft: "/other/healthCompanionLeft.webp",
+    healthCompanionLeft: "/other/healthCompanionleft.webp",
     healthCompanionRight: "/other/healthCompanionRight.webp",
     healthCompanionCenter: "/other/healthCompanionCenter.webp",
   },

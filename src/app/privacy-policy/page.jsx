@@ -2,7 +2,7 @@ import React from 'react';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="min-h-screen bg-amber-50 py-6 sm:py-10 px-4 sm:px-6 lg:px-16 pt-[100px] sm:pt-[120px]">
+    <div className="min-h-screen bg-spring-wood py-6 sm:py-10 px-4 sm:px-6 lg:px-16">
       <div className="max-w-4xl mx-auto">
 
         {/* Back Button */}

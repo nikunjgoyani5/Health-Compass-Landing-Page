@@ -43,8 +43,20 @@
     scroll-behavior: smooth;
   }
 
+  body{
+    @apply bg-spring-wood
+  }
+
   .main-container {
     @apply max-w-[1440px] mx-auto px-4;
+  }
+
+  @media (max-width: 1220px) {
+    .main-container {
+      padding-left: 1rem; /* = Tailwind's px-4 */
+      padding-right: 1rem;
+      max-width: 500px; /* optional: if you want to limit width on smaller screens */
+    }
   }
 
   .backdrop-blur-xs {

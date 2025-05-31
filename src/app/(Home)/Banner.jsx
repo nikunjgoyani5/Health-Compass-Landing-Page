@@ -9,6 +9,7 @@ import MailchimpForm from "@/components/MailChimpForm";
 const Banner = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isForm, setIsForm] = useState(false);
+  const [isVideo, setIsVideo] = useState(false);
 
   const handleOpen = useCallback(() => setIsOpen(true), []);
   const handleClose = useCallback(() => setIsOpen(false), []);
@@ -17,16 +18,17 @@ const Banner = () => {
   const handleCloseForm = useCallback(() => setIsForm(false), []);
   return (
     <>
-      <section className="bg-spring-wood pt-[80px] sm:pt-[93px]">
+      <section className="bg-spring-wood">
+        {/* <section className="bg-spring-wood pt-[80px] sm:pt-[93px]"> */}
         <div className="main-container section-p-y">
           <div className="grid items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
             <div>
               <h1 className="text-[32px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
-                Your <span className="text-primary">trusted</span> partner in
-                better health.
+                Tired of <span className="text-primary">feeling</span> stuck
+                with your health?
               </h1>
               <span className="text-sm sm:text-md md:text-lg text-davy-gray">
-                Join the early access list and get exclusive launch updates
+                Join our early access to discover a smarter way to feel better.
               </span>
               {/* <form> */}
               <div className="flex mt-6 mb-4 sm:mb-10 md:mb-0 sm:mt-10 md:mt-12 bg-white shadow-md rounded-md overflow-hidden max-w-[500px]">
@@ -58,7 +60,9 @@ const Banner = () => {
                 >
                   <Play size={24} />
                   <span className="text-start">
-                    <span className="block text-sm sm:text-base">Watch Demo</span>
+                    <span className="block text-sm sm:text-base">
+                      Watch Demo
+                    </span>
                     <span className="text-xs sm:text-sm">2 min</span>
                   </span>
                 </button>
@@ -77,7 +81,7 @@ const Banner = () => {
           </div>
         </div>
       </section>
-      <VideoPlayer isOpen={isOpen} onHide={handleClose} />
+      {/* <VideoPlayer isOpen={isOpen} onHide={handleClose} /> */}
       <MailchimpForm isOpen={isForm} onHide={handleCloseForm} />
     </>
   );

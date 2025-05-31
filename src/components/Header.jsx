@@ -36,22 +36,25 @@ const Header = () => {
 
   return (
     <>
-      <header className="w-full fixed top-0  z-[50] bg-transparent ">
-        {/* <div className="bg-primary mx-auto px-4">
-          <div className="py-2  text-xs text-white flex justify-center items-center font-semibold">
-            <p>
-            25,000+ Supplement Insights   
-              <span>- Explore one of the world’s largest AI-powered supplement databases — personalized for your needs.” </span>
-            </p>
-          </div>
-        </div> */}
+      <div className="bg-primary mx-auto px-4">
+        <div className="py-2  text-xs text-white flex justify-center items-center font-semibold">
+          <p className="text-center">
+            25,000+ Supplement Insights
+            <span>
+              - Explore one of the world’s largest AI-powered supplement
+              databases — personalized for your needs.”{" "}
+            </span>
+          </p>
+        </div>
+      </div>
+      <header className={`w-full ${isScrolled ? "top-[0px]" : "top-[0px]"} sticky bg-transparent  z-[50] transition-all`}>
         <nav
-          className={`relative z-[50] main-container transition-colors duration-300 rounded-b-xl ${
+          className={`relative w-full z-[50] main-container transition-colors duration-300 rounded-b-xl ${
             isScrolled ? "bg-white shadow-md" : "bg-transparent"
           }`}
         >
           <div className="relative">
-            <div className="container mx-auto py-4">
+            <div className="py-4">
               <div className="flex justify-between items-center">
                 <Link href="/" className="flex items-center">
                   <img
