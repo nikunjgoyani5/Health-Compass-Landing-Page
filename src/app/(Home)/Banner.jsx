@@ -9,7 +9,7 @@ import MailchimpForm from "@/components/MailChimpForm";
 const Banner = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isForm, setIsForm] = useState(false);
-  const [isVideo, setIsVideo] = useState(false);
+  const [isVideo, setIsVideo] = useState(true);
 
   const handleOpen = useCallback(() => setIsOpen(true), []);
   const handleClose = useCallback(() => setIsOpen(false), []);
@@ -49,23 +49,29 @@ const Banner = () => {
             </div>
             <div className="relative md:ps-5">
               <span className="relative block mx-auto banner-content rounded-xl overflow-hidden">
-                <img
-                  src={Images.banner}
-                  className="mx-auto relative z-[1] w-full h-full "
-                  alt=""
-                />
-                <button
-                  onClick={handleOpen}
-                  className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 md:right-auto md:left-0 z-[1] text-white font-semibold bg-white/10 backdrop-blur-[44px] px-4 sm:px-6 py-1 sm:py-2 rounded-xl m-4 play-animation"
-                >
-                  <Play size={24} />
-                  <span className="text-start">
-                    <span className="block text-sm sm:text-base">
-                      Watch Demo
-                    </span>
-                    <span className="text-xs sm:text-sm">2 min</span>
+                {!isVideo ? (
+                  <span>
+                    <img
+                      src={Images.banner}
+                      className="mx-auto relative z-[1] w-full h-full "
+                      alt=""
+                    />
+                    <button
+                      onClick={handleOpen}
+                      className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 md:right-auto md:left-0 z-[1] text-white font-semibold bg-white/10 backdrop-blur-[44px] px-4 sm:px-6 py-1 sm:py-2 rounded-xl m-4 play-animation"
+                    >
+                      <Play size={24} />
+                      <span className="text-start">
+                        <span className="block text-sm sm:text-base">
+                          Watch Demo
+                        </span>
+                        <span className="text-xs sm:text-sm">2 min</span>
+                      </span>
+                    </button>{" "}
                   </span>
-                </button>
+                ) : (
+                  <video autoplay muted controlsList="nodownload" controls className="h-full w-full object-cover" src="/video.mp4"></video>
+                )}
               </span>
               <img
                 src={Images.pattern}

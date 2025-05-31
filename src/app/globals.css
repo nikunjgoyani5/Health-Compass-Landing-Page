@@ -51,13 +51,13 @@
     @apply max-w-[1440px] mx-auto px-4;
   }
 
-  @media (max-width: 1220px) {
+  /* @media (max-width: 1220px) {
     .main-container {
-      padding-left: 1rem; /* = Tailwind's px-4 */
+      padding-left: 1rem;
       padding-right: 1rem;
-      max-width: 500px; /* optional: if you want to limit width on smaller screens */
+      max-width: 500px; 
     }
-  }
+  } */
 
   .backdrop-blur-xs {
     --tw-backdrop-blur: blur(2px);
