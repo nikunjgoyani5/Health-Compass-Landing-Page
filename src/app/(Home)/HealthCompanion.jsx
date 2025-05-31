@@ -34,7 +34,7 @@ const HealthCompanion = ({ className }) => {
 
         <div className="main-container mx-auto text-center relative z-10">
           <div className="max-w-[850px] mx-auto">
-            <h2 className="text-center text-[26px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
+            <h2 className="text-center text-[32px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
               Your{" "}
               <span className="text-primary relative">
                 health{" "}
@@ -72,7 +72,7 @@ const HealthCompanion = ({ className }) => {
 
             {/* Text and Button Section */}
             <div className="w-full text-start md:text-left">
-              <h3 className=" font-medium mb-8 text-[#004D49] text-[26px] md:text-[44px] lg:text-[45px] leading-tight">
+              <h3 className=" font-medium mb-5 sm:mb-8 text-[#004D49] text-[26px] md:text-[44px] lg:text-[45px] leading-tight">
                 Your Best AI Health Companion
               </h3>
               {/* Optional: Add a small description here if needed, based on design */}

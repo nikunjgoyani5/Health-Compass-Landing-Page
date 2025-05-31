@@ -131,7 +131,7 @@ export default function TestimonialsSection() {
         {/* Title Row */}
         <div className="flex items-center justify-between mb-2 relative mx-auto">
           <div>
-            <h2 className="text-[26px] md:text-[44px] lg:text-[48px] font-medium mb-2 relative z-10">
+            <h2 className="text-[32px] md:text-[44px] lg:text-[48px] font-medium mb-2 relative z-10">
               Real <span className="text-dark-primary">Stories</span>, Real
               <span className="relative inline-block ml-1 text-dark-primary">
                 Results

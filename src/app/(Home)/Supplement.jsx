@@ -42,7 +42,7 @@ const Supplement = () => {
     <section className="section-p-y  bg-white">
       <div className="main-container scroll-smooth">
         <div className="max-w-[850px] mx-auto">
-          <h1 className="text-center text-[26px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
+          <h1 className="text-center text-[32px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4">
             Your daily wellness,{" "}
             <span className="text-primary relative">
               Organized{" "}
