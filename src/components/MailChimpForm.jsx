@@ -8,81 +8,82 @@ const MailchimpForm = ({ isOpen, onHide }) => {
   return (
     <Modal isOpen={isOpen} onHide={onHide}>
       <div id="mc_embed_signup">
-        <form
-          action="https://gohealthcompass.usx.list-manage.com/subscribe/post?u=XXXXXXX&id=YYYYYYY"
-          // action="https://gohealthcompass.us10.list-manage.com/subscribe/post?u=b427fa6815-9e0ee3bd63&id=6cb40504e4"
-          method="post"
-          id="mc-embedded-subscribe-form"
-          name="mc-embedded-subscribe-form"
-          className="validate"
-          target="_blank"
-          noValidate
-          onSubmit={() => {
-            if (window.fbq) {
-              window.fbq("track", "Lead");
-            }
-          }}
-        >
-          <div id="mc_embed_signup_scroll">
-            <h2 className="text-[20px] sm:text-3xl font-semibold relative me-5 mb-3">
-              Join the{" "}
-              <span className="text-primary relative">
-                {" "}
-                Health Compass
-                <Image
-                  src={Images.other.titlePattern}
-                  width={175}
-                  height={12}
-                  alt="title pattern"
-                  className="absolute right-0 mt-[-2px]"
-                />{" "}
-              </span>
-              list{" "}
-              {/* <img
+        {isOpen && (
+          <form
+            action="https://gohealthcompass.usx.list-manage.com/subscribe/post?u=XXXXXXX&id=YYYYYYY"
+            // action="https://gohealthcompass.us10.list-manage.com/subscribe/post?u=b427fa6815-9e0ee3bd63&id=6cb40504e4"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            className="validate"
+            target="_blank"
+            noValidate
+            onSubmit={() => {
+              if (window.fbq) {
+                window.fbq("track", "Lead");
+              }
+            }}
+          >
+            <div id="mc_embed_signup_scroll">
+              <h2 className="text-[20px] sm:text-3xl font-semibold relative me-5 mb-3">
+                Join the{" "}
+                <span className="text-primary relative">
+                  {" "}
+                  Health Compass
+                  <Image
+                    src={Images.other.titlePattern}
+                    width={175}
+                    height={12}
+                    alt="title pattern"
+                    className="absolute right-0 mt-[-2px]"
+                  />{" "}
+                </span>
+                list{" "}
+                {/* <img
                 className="title-pattern top-[100%] sm:block"
                 src={Images.other.titlePattern}
                 alt=""
               /> */}
-            </h2>
-            <p className="text-start text-[13px] sm:text-base text-gray-500 block mb-7 sm:mb-10">
-              Join the early access list and get exclusive launch updates.
-            </p>
+              </h2>
+              <p className="text-start text-[13px] sm:text-base text-gray-500 block mb-7 sm:mb-10">
+                Join the early access list and get exclusive launch updates.
+              </p>
 
-            <div className="mc-field-group mb-5 sm:mb-6">
-              <label
-                htmlFor="mce-FNAME"
-                className="mb-1 block text-sm font-medium text-text-primary"
-              >
-                First Name
-              </label>
-              <input
-                required
-                type="text"
-                name="FNAME"
-                id="mce-FNAME"
-                placeholder="Your Name"
-                className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-              />
-            </div>
+              <div className="mc-field-group mb-5 sm:mb-6">
+                <label
+                  htmlFor="mce-FNAME"
+                  className="mb-1 block text-sm font-medium text-text-primary"
+                >
+                  First Name
+                </label>
+                <input
+                  required
+                  type="text"
+                  name="FNAME"
+                  id="mce-FNAME"
+                  placeholder="Your Name"
+                  className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                />
+              </div>
 
-            <div className="mc-field-group mb-8 sm:mb-10">
-              <label
-                htmlFor="mce-EMAIL"
-                className="mb-1 block text-sm font-medium text-text-primary"
-              >
-                Email Address *
-              </label>
-              <input
-                type="email"
-                name="EMAIL"
-                className="required email w-full rounded-md border border-gray-300 px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                id="mce-EMAIL"
-                placeholder="Your Email"
-                required
-              />
-            </div>
+              <div className="mc-field-group mb-8 sm:mb-10">
+                <label
+                  htmlFor="mce-EMAIL"
+                  className="mb-1 block text-sm font-medium text-text-primary"
+                >
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  name="EMAIL"
+                  className="required email w-full rounded-md border border-gray-300 px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  id="mce-EMAIL"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
 
-            {/* <div id="mce-responses" className="clear">
+              {/* <div id="mce-responses" className="clear">
               <div
                 className="response"
                 id="mce-error-response"
@@ -95,7 +96,7 @@ const MailchimpForm = ({ isOpen, onHide }) => {
               ></div>
             </div> */}
 
-            {/* <div
+              {/* <div
               style={{ position: "absolute", left: "-5000px" }}
               aria-hidden="true"
             >
@@ -107,17 +108,18 @@ const MailchimpForm = ({ isOpen, onHide }) => {
               />
             </div> */}
 
-            <div className="clear">
-              <input
-                type="submit"
-                value="Subscribe"
-                name="subscribe"
-                id="mc-embedded-subscribe"
-                className="button btn-teal w-full block cursor-pointer"
-              />
+              <div className="clear">
+                <input
+                  type="submit"
+                  value="Subscribe"
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
+                  className="button btn-teal w-full block cursor-pointer"
+                />
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        )}
       </div>
     </Modal>
   );
