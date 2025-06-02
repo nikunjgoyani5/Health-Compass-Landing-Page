@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 import { ROUTES } from "@/constants/route";
 import { useMediaQuery } from "react-responsive";
 
-
 const Header = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,8 +29,8 @@ const Header = () => {
           "testimonials",
         ],
         taglines: [
-          "Supplements Simplified for You",
           "Personalized Wellness, Simplified",
+          "Supplements Simplified For You",
           "Personal Health Assistant on Duty ",
           "Wellness, Insights, and Daily Support",
         ],
@@ -45,9 +44,9 @@ const Header = () => {
           "testimonials",
         ],
         taglines: [
-          "Supplements Simplified for You",
-          "Personal Health Assistant on Duty ",
           "Personalized Wellness, Simplified",
+          "Personal Health Assistant on Duty ",
+          "Supplements Simplified For You",
           "Wellness, Insights, and Daily Support",
         ],
       };
