@@ -9,7 +9,7 @@ const AOSInitializer = () => {
     AOS.init({
       duration: 800, // animation duration
       once: true, // whether animation should happen only once
-      offset: 200, // Trigger offset (px) from the original trigger point
+      offset: 80, // Trigger offset (px) from the original trigger point
       anchorPlacement: "top-bottom",
     });
   }, []);

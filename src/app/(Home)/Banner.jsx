@@ -28,7 +28,7 @@ const Banner = () => {
   return (
     <>
       <section className="bg-spring-wood">
-        <div className="main-container relative py-[4%]">
+        <div className="main-container relative pb-[4%] pt-[2%] md:pt-[4%]">
           <div className="grid  items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
             <div>
               <h1
@@ -69,7 +69,7 @@ const Banner = () => {
                 <button
                   onClick={handleOpenForm}
                   type="submit"
-                  className="bg-dark-primary hover:bg-primary px-5 text-white rounded-md hover:bg-primary-dark transition-colors text-nowrap font-semibold text-sm md:text-md"
+                  className="bg-dark-primary hover:bg-light-primary px-5 text-white rounded-md hover:bg-primary-dark transition-colors text-nowrap font-semibold text-sm md:text-md"
                 >
                   Get Early Access
                 </button>

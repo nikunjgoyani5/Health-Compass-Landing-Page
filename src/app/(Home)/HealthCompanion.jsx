@@ -81,7 +81,7 @@ const HealthCompanion = ({ className }) => {
               <button
               data-aos="fade-up" data-aos-delay="300"
                 onClick={handleOpenForm}
-                className="bg-dark-primary text-white px-6 py-3 rounded-full text-sm lg:text-base font-semibold  hover:bg-primary transition-colors"
+                className="bg-dark-primary hover:bg-light-primary text-white px-6 py-3 rounded-full text-sm lg:text-base font-semibold transition-colors"
               >
                 Request Early Access
               </button>

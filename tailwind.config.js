@@ -16,6 +16,7 @@ module.exports = {
         "spring-wood": "#FBF6ED",
         "davy-gray": "#535252",
         "dark-primary": "#2D918C",
+        "light-primary": "#2D918CB3",
       },
       height: {
         hero: "calc(100vh - 125px)",

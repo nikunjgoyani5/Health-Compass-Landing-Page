@@ -37,7 +37,7 @@ const Header = () => {
   return (
     <>
       <div className="bg-primary mx-auto px-4">
-        <div className="py-2 text-[10px] sm:text-xs text-white flex justify-center items-center font-semibold">
+        <div className="py-1 md:py-2 text-[10px] sm:text-xs text-white flex justify-center items-center font-semibold">
           <p className="text-center">
             <b>25,000+ Supplement Insights</b>
             <span>
@@ -58,13 +58,13 @@ const Header = () => {
           }`}
         >
           <div className="relative">
-            <div className="py-4">
+            <div className="py-3 md:py-4">
               <div className="flex justify-between items-center">
                 <Link href="/" className="flex items-center">
                   <img
                     src={Images.logo}
                     alt="Health Compass Logo"
-                    className="mr-2 w-[75%]"
+                    className="mr-2 w-[250px] md:w-[75%]"
                   />
                 </Link>
 
