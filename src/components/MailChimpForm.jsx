@@ -2,6 +2,7 @@
 import React from "react";
 import Modal from "./common/Modal";
 import { Images } from "@/data/images";
+import Image from "next/image";
 
 const MailchimpForm = ({ isOpen, onHide }) => {
   return (
@@ -17,13 +18,25 @@ const MailchimpForm = ({ isOpen, onHide }) => {
           noValidate
         >
           <div id="mc_embed_signup_scroll">
-            <h2 className="text-[20px] sm:text-3xl font-semibold relative me-5">
-              Join the Health Compass list{" "}
-              <img
+            <h2 className="text-[20px] sm:text-3xl font-semibold relative me-5 mb-3">
+              Join the{" "}
+              <span className="text-primary relative">
+                {" "}
+                Health Compass
+                <Image
+                  src={Images.other.titlePattern}
+                  width={175}
+                  height={12}
+                  alt="title pattern"
+                  className="absolute right-0 mt-[-2px]"
+                />{" "}
+              </span>
+              list{" "}
+              {/* <img
                 className="title-pattern top-[100%] sm:block"
                 src={Images.other.titlePattern}
                 alt=""
-              />
+              /> */}
             </h2>
             <p className="text-start text-[13px] sm:text-base text-gray-500 block mb-7 sm:mb-10">
               Join the early access list and get exclusive launch updates.

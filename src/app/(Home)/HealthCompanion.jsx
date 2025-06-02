@@ -65,7 +65,7 @@ const HealthCompanion = ({ className, id }) => {
           </div>
 
           {/* Main Content Block with light green background */}
-          <div className="flex max-w-[500px] md:max-w-full xl:max-w-[90%] gap-10 flex-col md:flex-row items-center bg-[#2D918C1A] rounded-lg p-6 md:p-4 mx-auto shadow-xl">
+          <div className="flex max-w-[500px] md:max-w-full xl:max-w-[90%] gap-10 flex-col md:flex-row items-center bg-[#2D918C1A] rounded-3xl p-6 md:p-4 mx-auto shadow-xl">
             {/* Image Section */}
             <div className="w-full">
               <Image
