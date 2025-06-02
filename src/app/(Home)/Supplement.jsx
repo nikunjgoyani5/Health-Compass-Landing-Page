@@ -111,7 +111,7 @@ const Supplement = ({ id }) => {
                   </p>
                 </div>
               ))}
-              <span className="block h-[150%] absolute top-[-20px] left-[1px] z-[-1] bg-gray-200 w-[1px]"></span>
+              <span className="block h-[100%] absolute top-[-30px] left-[1px] z-[-1] bg-gray-200 w-[1px]"></span>
             </div>
           </div>
 
