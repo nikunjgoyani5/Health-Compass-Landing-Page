@@ -157,9 +157,9 @@ const Header = () => {
                   <img
                     src={Images.logo3}
                     alt="Health Compass Logo"
-                    className="mr-2 w-[250px]"
+                    className="mr-2 w-[300px]"
                   />
-                  <div className="absolute top-[50%] left-[64px] mt-1">
+                  <div className="absolute top-[50%] left-[78px] mt-2">
                     <div className="overflow-hidden relative h-[20px] w-[280px]">
                       <div
                         className="transition-transform duration-500 ease-in-out"
@@ -170,9 +170,9 @@ const Header = () => {
                         {taglines.map((tagline, i) => (
                           <div
                             key={i}
-                            className="text-gray-600 text-xs h-[20px] whitespace-nowrap"
+                            className="text-primary text-xs h-[20px] whitespace-nowrap font-semibold"
                           >
-                            <i>{tagline}</i>
+                            {tagline}
                           </div>
                         ))}
                       </div>
