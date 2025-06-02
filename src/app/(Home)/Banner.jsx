@@ -28,8 +28,8 @@ const Banner = () => {
   return (
     <>
       <section className="bg-spring-wood">
-        <div className="main-container py-[4%]">
-          <div className="grid items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
+        <div className="main-container relative py-[4%]">
+          <div className="grid  items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
             <div>
               <h1
                 data-aos="fade-up"
@@ -114,15 +114,15 @@ const Banner = () => {
 
               <img
                 src={Images.pattern}
-                className="absolute hidden sm:block bottom-[-11%] z-[0]"
-                alt=""
-              />
-              <img
-                src={Images.pattern}
                 className="absolute hidden sm:block top-[-70px] z-[0] right-0"
                 alt=""
               />
             </div>
+            <img
+              src={Images.pattern}
+              className="absolute hidden xl:block xl:bottom-[0%] left-[50%] translate-x-[-50%] z-[0]"
+              alt=""
+            />
           </div>
         </div>
       </section>
