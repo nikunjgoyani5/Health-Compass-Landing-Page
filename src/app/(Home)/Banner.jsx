@@ -6,7 +6,7 @@ import { Play } from "lucide-react";
 import MailchimpForm from "@/components/MailChimpForm";
 import Image from "next/image";
 
-const Banner = () => {
+const Banner = ({ id }) => {
   const [isForm, setIsForm] = useState(false);
   const [isVideo, setIsVideo] = useState(true);
   const [videoReady, setVideoReady] = useState(false);
@@ -35,8 +35,8 @@ const Banner = () => {
 
   return (
     <>
-      <section className="bg-spring-wood">
-        <div className="main-container relative pb-[4%] pt-[2%] md:pt-[4%]">
+      <section id={id} className="bg-spring-wood">
+        <div className="main-container relative pb-[4%] pt-[2%] md:pt-[3%]">
           <div className="grid items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
             <div>
               <h1

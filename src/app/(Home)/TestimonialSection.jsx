@@ -2,13 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import {
-  Star,
-  ArrowLeft ,
-  ArrowRight ,
-  MoveLeft,
-  MoveRight,
-} from "lucide-react";
+import { Star, ArrowLeft, ArrowRight, MoveLeft, MoveRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 
@@ -92,7 +86,7 @@ const testimonials = [
   },
 ];
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({id}) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperInstance, setSwiperInstance] = useState(null);
@@ -113,11 +107,8 @@ export default function TestimonialsSection() {
       swiperInstance.params.navigation.nextEl = nextRef.current;
       swiperInstance.navigation.init();
       swiperInstance.navigation.update();
-
     }
   }, [swiperInstance]);
-
-
 
   const getProgressWidth = () => {
     if (totalSlides <= 1) return "0%";
@@ -126,12 +117,18 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative overflow-hidden section-container bg-spring-wood section-p-y">
+    <section
+      id={id}
+      className="relative overflow-hidden section-container bg-spring-wood section-p-y"
+    >
       <div className="mx-auto main-container">
         {/* Title Row */}
         <div className="flex items-center justify-between mb-2 relative mx-auto">
           <div>
-            <h2 data-aos="fade-up" className="text-[32px] md:text-[44px] lg:text-[48px] font-medium mb-2 relative z-10">
+            <h2
+              data-aos="fade-up"
+              className="text-[32px] md:text-[44px] lg:text-[48px] font-medium mb-2 relative z-10"
+            >
               Real <span className="text-dark-primary">Stories</span>, Real
               <span className="relative inline-block ml-1 text-dark-primary">
                 Results
@@ -144,7 +141,11 @@ export default function TestimonialsSection() {
                 />
               </span>
             </h2>
-            <p data-aos="fade-up" data-aos-delay="300" className="text-[#535252] text-[13px] sm:text-base max-w-xl mt-1">
+            <p
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="text-[#535252] text-[13px] sm:text-base max-w-xl mt-1"
+            >
               Trusted by thousands of users—from active seniors to busy
               caregivers—HealthCompass makes wellness tracking simple, smart,
               and personal.
@@ -152,20 +153,24 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Navigation Buttons */}
-          <div data-aos="fade-up" data-aos-delay="300" className="hidden sm:flex gap-3 items-center">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="hidden sm:flex gap-3 items-center"
+          >
             <button
               disabled={isBeginning}
               ref={prevRef}
               className="w-9 h-9 rounded-full flex items-center justify-center bg-[#EBE7DF] shadow disabled:opacity-50 transition-colors hover:bg-dark-primary hover:text-white"
             >
-              <ArrowLeft  size={18} />
+              <ArrowLeft size={18} />
             </button>
             <button
               disabled={isEnd}
               ref={nextRef}
               className="w-9 h-9 rounded-full flex items-center justify-center bg-[#EBE7DF] shadow disabled:opacity-50 transition-colors hover:bg-dark-primary hover:text-white"
             >
-              <ArrowRight  size={18} />
+              <ArrowRight size={18} />
             </button>
           </div>
         </div>

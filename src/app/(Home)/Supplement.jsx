@@ -4,7 +4,7 @@ import { Images } from "@/data/images";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
-const Supplement = () => {
+const Supplement = ({ id }) => {
   const data = [
     { image: Images.container1, url: "1", title: "Supplement Tracking" },
     { image: Images.container2, url: "2", title: "AI Health Assistant" },
@@ -39,7 +39,7 @@ const Supplement = () => {
   }, []);
 
   return (
-    <section className="section-p-y  bg-white">
+    <section id={id} className="section-p-y  bg-white">
       <div className="main-container scroll-smooth">
         <div className="max-w-[850px] mx-auto">
           <h1

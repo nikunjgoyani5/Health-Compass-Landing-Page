@@ -2,19 +2,57 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 import { Images } from "@/data/images";
 import { navItems } from "@/data/navItems";
 import { usePathname } from "next/navigation";
-// import MailchimpForm from "./MailChimpForm";
 import { ROUTES } from "@/constants/route";
+import { useMediaQuery } from "react-responsive";
+
 
 const Header = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname(); // ✅ get current path
+  const pathname = usePathname();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollTimeout = useRef(null);
+
+  const { sectionIds, taglines } = useMemo(() => {
+    if (isMobile) {
+      return {
+        sectionIds: [
+          "banner",
+          "health_companion_mobile",
+          "supplement",
+          "testimonials",
+        ],
+        taglines: [
+          "Supplements Simplified for You",
+          "Personalized Wellness, Simplified",
+          "Personal Health Assistant on Duty ",
+          "Wellness, Insights, and Daily Support",
+        ],
+      };
+    } else {
+      return {
+        sectionIds: [
+          "banner",
+          "supplement",
+          "health_companion_desktop",
+          "testimonials",
+        ],
+        taglines: [
+          "Supplements Simplified for You",
+          "Personal Health Assistant on Duty ",
+          "Personalized Wellness, Simplified",
+          "Wellness, Insights, and Daily Support",
+        ],
+      };
+    }
+  }, [isMobile]);
 
   const handleCloseMenu = useCallback(() => setMobileMenuOpen(false), []);
   const handleOpenModal = useCallback(() => {
@@ -26,12 +64,67 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const threshold = window.innerWidth < 768 ? 0 : 20; // 30px for small, 100px for md+
+      const threshold = window.innerWidth < 768 ? 0 : 20;
       setIsScrolled(window.scrollY > threshold);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+
+      scrollTimeout.current = setTimeout(() => {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        const isDesktop = window.innerWidth >= 768; // Match your md breakpoint
+
+        const sections = sectionIds.map((id) => {
+          const el = document.getElementById(id);
+          if (!el) return { id, top: Infinity, bottom: -Infinity };
+
+          const rect = el.getBoundingClientRect();
+          return {
+            id,
+            top: rect.top + window.scrollY,
+            bottom: rect.bottom + window.scrollY,
+          };
+        });
+
+        // Special handling for HealthCompanion - use only the relevant version
+        const filteredSections = sections.filter((section) => {
+          if (section.id === "health_companion_mobile") return !isDesktop;
+          if (section.id === "health_companion_desktop") return isDesktop;
+          return true;
+        });
+
+        let currentIndex = 0;
+        for (let i = 0; i < filteredSections.length; i++) {
+          if (
+            scrollPosition >= filteredSections[i].top &&
+            scrollPosition <= filteredSections[i].bottom
+          ) {
+            // Map back to original index for taglines
+            currentIndex = sectionIds.indexOf(filteredSections[i].id);
+            break;
+          }
+        }
+
+        setActiveIndex(currentIndex);
+      }, 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
   }, []);
 
   return (
@@ -41,8 +134,8 @@ const Header = () => {
           <p className="text-center">
             <b>25,000+ Supplement Insights</b>
             <span>
-              - Explore one of the world’s largest AI-powered supplement
-              databases — personalized for your needs.”{" "}
+              - Explore one of the world's largest AI-powered supplement
+              databases — personalized for your needs.
             </span>
           </p>
         </div>
@@ -50,7 +143,7 @@ const Header = () => {
       <header
         className={`w-full ${
           isScrolled ? "top-[0px]" : "top-[0px]"
-        } sticky bg-transparent  z-[50] transition-all`}
+        } sticky bg-transparent z-[50] transition-all`}
       >
         <nav
           className={`relative w-full z-[50] main-container transition-colors duration-300 rounded-b-xl ${
@@ -60,116 +153,37 @@ const Header = () => {
           <div className="relative">
             <div className="py-3 md:py-4">
               <div className="flex justify-between items-center">
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center relative">
                   <img
-                    src={Images.logo}
+                    src={Images.logo3}
                     alt="Health Compass Logo"
-                    className="mr-2 w-[250px] md:w-[75%]"
+                    className="mr-2 w-[250px]"
                   />
-                </Link>
-
-                {/* Mobile menu button */}
-                {/* <button
-                  className="md:hidden text-text-primary"
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                  {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button> */}
-
-                {/* Desktop navigation */}
-                {/* <div className="hidden md:flex items-center space-x-8">
-                  <ul className="flex space-x-6 md:me-[60px] xl:me-[100px]">
-                    {navItems.map((item, index) => {
-                      const title = item.title;
-                      const path = item.path;
-                      return (
-                        <li key={index}>
-                          <Link
-                            onClick={handleCloseMenu}
-                            href={path}
-                            className={`${
-                              isActive(path)
-                                ? "nav-link text-primary"
-                                : "nav-link text-black"
-                            } `}
-                          >
-                            {title}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-                <div className="hidden md:flex space-x-3">
-                  <Link
-                    target="_blank"
-                    href={ROUTES.LOGIN}
-                    className="btn-outline border-primary text-primary"
-                  >
-                    Log in
-                  </Link>
-                  <button
-                    onClick={handleOpenModal}
-                    className="btn-primary cursor-pointer"
-                  >
-                    Sign up
-                  </button>
-                </div> */}
-              </div>
-
-              {/* Mobile navigation */}
-            </div>
-            <div
-              className={`md:hidden absolute left-0 top-full w-full bg-white z-[20] transition-all duration-200 ${
-                mobileMenuOpen
-                  ? "translate-y-0 opacity-100 pointer-events-auto"
-                  : "-translate-y-4 opacity-0 pointer-events-none"
-              }`}
-            >
-              <ul className="flex flex-col space-y-4 px-4 pt-5">
-                {navItems.map((item, index) => {
-                  const title = item.title;
-                  const path = item.path;
-                  return (
-                    <li key={index}>
-                      <Link
-                        onClick={handleCloseMenu}
-                        href={path}
-                        className={`${
-                          isActive(path)
-                            ? "nav-link text-primary"
-                            : "nav-link text-black"
-                        } block`}
+                  <div className="absolute top-[50%] left-[64px] mt-1">
+                    <div className="overflow-hidden relative h-[20px] w-[280px]">
+                      <div
+                        className="transition-transform duration-500 ease-in-out"
+                        style={{
+                          transform: `translateY(-${activeIndex * 20}px)`,
+                        }}
                       >
-                        {title}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="flex space-x-3 mt-7 px-4 pb-5">
-                <Link
-                  target="_blank"
-                  href={ROUTES.LOGIN}
-                  className="btn-outline border-primary text-primary"
-                >
-                  Log in
+                        {taglines.map((tagline, i) => (
+                          <div
+                            key={i}
+                            className="text-gray-600 text-xs h-[20px] whitespace-nowrap"
+                          >
+                            <i>{tagline}</i>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </Link>
-                <button
-                  onClick={handleOpenModal}
-                  className="btn-primary cursor-pointer"
-                >
-                  Sign up
-                </button>
-                {/* <Link href="/signup" className="btn-primary">
-                Sign up
-              </Link> */}
               </div>
             </div>
           </div>
         </nav>
       </header>
-      {/* <MailchimpForm isOpen={isModal} onHide={handleCloseModal} /> */}
     </>
   );
 };

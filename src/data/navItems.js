@@ -8,3 +8,4 @@ export const navItems = [
     path: "#service",
   },
 ];
+

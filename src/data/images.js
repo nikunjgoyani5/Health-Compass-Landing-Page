@@ -1,6 +1,7 @@
 export const Images = {
   logo: "/logo.webp",
   logo2: "/logo2.webp",
+  logo3: "/logo3.png",
   banner: "/banner3.webp",
   pattern: "/pattern.webp",
 
