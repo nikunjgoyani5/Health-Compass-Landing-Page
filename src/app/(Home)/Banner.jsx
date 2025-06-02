@@ -9,17 +9,25 @@ import Image from "next/image";
 const Banner = () => {
   const [isForm, setIsForm] = useState(false);
   const [isVideo, setIsVideo] = useState(true);
+  const [videoReady, setVideoReady] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
 
   const handleOpen = useCallback(() => {
-    setIsVideo(false);
+    setShowVideo(true); // Show the <video> tag
+  }, []);
+
+  const handleVideoReady = useCallback(() => {
+    setVideoReady(true); // Reveal the video only after it's ready
     setTimeout(() => {
       videoRef.current?.play();
     }, 100);
   }, []);
 
   const handleVideoEnd = useCallback(() => {
-    setIsVideo(true); // Reset to show image again
+    setIsVideo(true);
+    setVideoReady(false);
+    setShowVideo(false);
   }, []);
 
   const handleOpenForm = useCallback(() => setIsForm(true), []);
@@ -29,11 +37,11 @@ const Banner = () => {
     <>
       <section className="bg-spring-wood">
         <div className="main-container relative pb-[4%] pt-[2%] md:pt-[4%]">
-          <div className="grid  items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
+          <div className="grid items-center md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]">
             <div>
               <h1
                 data-aos="fade-up"
-                className="text-[32px]  md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4"
+                className="text-[32px] md:text-[44px] lg:text-[48px] font-semibold text-black leading-tight mb-4"
               >
                 Tired of{" "}
                 <span className="text-primary relative">
@@ -76,9 +84,10 @@ const Banner = () => {
               </div>
             </div>
 
+            {/* Video / Image section */}
             <div className="relative md:ps-5">
               <span className="relative block mx-auto banner-content rounded-xl overflow-hidden">
-                {isVideo ? (
+                {isVideo && !showVideo ? (
                   <span onClick={handleOpen} className="cursor-pointer">
                     <img
                       data-aos="zoom-out"
@@ -98,17 +107,30 @@ const Banner = () => {
                     </button>
                   </span>
                 ) : (
-                  <video
-                    ref={videoRef}
-                    onEnded={handleVideoEnd}
-                    autoPlay
-                    playsInline
-                    // muted
-                    controls
-                    controlsList="nodownload"
-                    className="h-full w-full object-cover"
-                    src="/video.mp4"
-                  />
+                  <>
+                    {/* Show image fallback until video is ready */}
+                    {!videoReady && (
+                      <img
+                        style={{ objectFit: "cover", objectPosition: "top" }}
+                        src={Images.banner}
+                        className="mx-auto relative z-[1] w-full h-full absolute top-0 left-0"
+                        alt="Fallback Banner"
+                      />
+                    )}
+                    <video
+                      ref={videoRef}
+                      onCanPlay={handleVideoReady}
+                      onEnded={handleVideoEnd}
+                      autoPlay
+                      playsInline
+                      controls
+                      controlsList="nodownload"
+                      className={`h-full w-full object-cover transition-opacity duration-300 ${
+                        videoReady ? "opacity-100" : "opacity-0"
+                      }`}
+                      src="/video.mp4"
+                    />
+                  </>
                 )}
               </span>
 
