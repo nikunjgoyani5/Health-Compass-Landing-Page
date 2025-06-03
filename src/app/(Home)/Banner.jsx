@@ -8,6 +8,7 @@ import Image from "next/image";
 
 const Banner = ({ id }) => {
   const [isForm, setIsForm] = useState(false);
+  const [email, setEmail] = useState("");
   const [isVideo, setIsVideo] = useState(true);
   const [videoReady, setVideoReady] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -30,7 +31,10 @@ const Banner = ({ id }) => {
     setShowVideo(false);
   }, []);
 
-  const handleOpenForm = useCallback(() => setIsForm(true), []);
+  const handleOpenForm = useCallback(() => {
+    setIsForm(true);
+  }, []);
+
   const handleCloseForm = useCallback(() => setIsForm(false), []);
 
   return (
@@ -70,9 +74,12 @@ const Banner = ({ id }) => {
                 className="flex mt-6 mb-4 sm:mb-10 md:mb-0 sm:mt-10 md:mt-12 bg-white shadow-md rounded-md overflow-hidden max-w-[500px]"
               >
                 <input
+                  id="email"
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full px-5 py-4 border border-none focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-500 placeholder:font-semibold text-sm md:text-md"
+                  className="w-full px-5 py-4 border !border-none focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-500 placeholder:font-semibold text-sm md:text-md"
                 />
                 <button
                   onClick={handleOpenForm}
@@ -149,7 +156,7 @@ const Banner = ({ id }) => {
         </div>
       </section>
 
-      <MailchimpForm isOpen={isForm} onHide={handleCloseForm} />
+      <MailchimpForm email={email} isOpen={isForm} onHide={handleCloseForm} />
     </>
   );
 };

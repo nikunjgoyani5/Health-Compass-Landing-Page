@@ -1,20 +1,21 @@
 // components/MailchimpForm.js
-import React from "react";
+import React, { memo } from "react";
 import Modal from "./common/Modal";
 import { Images } from "@/data/images";
 import Image from "next/image";
 
-const MailchimpForm = ({ isOpen, onHide }) => {
+const MailchimpForm = memo(({ email, isOpen, onHide }) => {
   return (
     <Modal isOpen={isOpen} onHide={onHide}>
-      <div id="mc_embed_signup">
+      <div id="mc_embed_signup" className="mailchimp-form">
         {isOpen && (
           <form
-          action="https://healthcompass.us21.list-manage.com/subscribe/post?u=47d8586b0e8e46084f66c4fbc&amp;id=95a9fd9aa4"
+            action="https://healthcompass.us21.list-manage.com/subscribe/post?u=47d8586b0e8e46084f66c4fbc&id=95a9fd9aa4"
+            // action="https://gmail.us12.list-manage.com/subscribe/post?u=399a31d77877092882b9c9881&amp;id=1a9c9968f2&amp;f_id=00bcc2e1f0"
             // action="https://gohealthcompass.us10.list-manage.com/subscribe/post?u=b427fa6815-9e0ee3bd63&id=6cb40504e4"
             method="post"
             target="_blank"
-            noValidate
+            // noValidate
             // onSubmit={() => {
             //   if (window.fbq) {
             //     window.fbq("track", "Lead");
@@ -71,6 +72,7 @@ const MailchimpForm = ({ isOpen, onHide }) => {
                   Email Address *
                 </label>
                 <input
+                  defaultValue={email || ""}
                   type="email"
                   name="EMAIL"
                   className="required email w-full rounded-md border border-gray-300 px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -123,6 +125,6 @@ const MailchimpForm = ({ isOpen, onHide }) => {
       </div>
     </Modal>
   );
-};
+});
 
 export default MailchimpForm;
