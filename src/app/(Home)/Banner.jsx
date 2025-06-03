@@ -86,7 +86,7 @@ const Banner = ({ id }) => {
                   type="submit"
                   className="bg-dark-primary hover:bg-light-primary px-5 text-white rounded-md hover:bg-primary-dark transition-colors text-nowrap font-semibold text-sm md:text-md"
                 >
-                  Get Early Access
+                  Get Started Now
                 </button>
               </div>
             </div>
