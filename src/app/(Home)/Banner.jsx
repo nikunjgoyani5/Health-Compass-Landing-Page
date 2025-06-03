@@ -84,9 +84,9 @@ const Banner = ({ id }) => {
                 <button
                   onClick={handleOpenForm}
                   type="submit"
-                  className="bg-dark-primary hover:bg-light-primary px-5 text-white rounded-md hover:bg-primary-dark transition-colors text-nowrap font-semibold text-sm md:text-md"
+                  className="bg-dark-primary hover:bg-light-primary px-7 text-white rounded-md hover:bg-primary-dark transition-colors text-nowrap font-bold text-sm md:text-[15px]"
                 >
-                  Get Started Now
+                  Try it Now
                 </button>
               </div>
             </div>

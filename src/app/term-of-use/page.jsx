@@ -2,7 +2,7 @@ import React from "react";
 
 const TermOfUse = () => {
   return (
-    <div className="min-h-screen bg-spring-wood py-6 sm:py-10 px-4 sm:px-6 lg:px-16 ">
+    <div className="min-h-screen bg-spring-wood py-6 sm:py-10 px-4 sm:px-6 lg:px-16">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
         <div className="mb-1 sm:mb-6">
@@ -32,104 +32,128 @@ const TermOfUse = () => {
           Terms of Use
         </h1>
 
-        {/* Content Box with Border */}
-        <div className="border border-gray-300 rounded-xl p-5 sm:p-8 lg:p-10">
+        {/* Content Box */}
+        <div className="bg-white shadow-lg border border-gray-300 rounded-xl p-5 sm:p-8 lg:p-10">
           {/* Section */}
           <section className="mb-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-teal-600 mb-3 font-mackinac">
-              Acceptance of Terms
-            </h2>
-            <p className="text-sm sm:text-base text-gray-800 font-inter leading-relaxed">
-              By accessing or using the Health Compass website and services
-              ("Service"), you agree to be bound by these Terms of Use
-              ("Terms"). If you do not agree to these Terms, please do not use
-              our Service.
+            <p className="text-sm sm:text-lg text-gray-600 font-medium mb-4 leading-relaxed">
+              <strong className="text-black">Effective Date:</strong> June 3,
+              2025
+            </p>
+            <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
+              Welcome to Health Compass, LLC. By accessing or using our
+              services, you agree to be bound by the terms outlined in this
+              document. Please read them carefully. If you do not agree with
+              these terms, please do not use our platform.
             </p>
           </section>
 
-          {/* Section */}
-          <section className="mb-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-teal-600 mb-3 font-mackinac">
-              Use of the Service
-            </h2>
-            <p className="text-sm sm:text-base text-gray-800 font-inter mb-3 leading-relaxed">
-              You agree to use the Service only for lawful purposes and in
-              accordance with these Terms. You agree not to use the Service:
-            </p>
-            <ul className="list-disc list-inside pl-4 text-sm sm:text-base text-gray-800 font-inter space-y-2">
-              <li>
-                In any way that violates any applicable national, federal,
-                state, local, or international law or regulation.
-              </li>
-              <li>
-                To engage in conduct that restricts or inhibits anyone’s use or
-                enjoyment of the Service, or which may harm Health Compass or
-                expose them to liability.
-              </li>
-              <li>
-                To transmit any unsolicited or unauthorized advertising or
-                promotional material, including junk mail, spam, or similar
-                solicitations.
-              </li>
-            </ul>
-          </section>
-
-          {/* Section */}
-          <section className="mb-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-teal-600 mb-3 font-mackinac">
-              Intellectual Property
-            </h2>
-            <p className="text-sm sm:text-base text-gray-800 font-inter leading-relaxed">
-              All content, features, and functionality on the Service are owned
-              by Health Compass or its licensors and are protected by
-              intellectual property laws.
-            </p>
-          </section>
-
-          {/* Section */}
-          <section className="mb-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-teal-600 mb-3 font-mackinac">
-              Disclaimer of Warranties
-            </h2>
-            <p className="text-sm sm:text-base text-gray-800 font-inter leading-relaxed">
-              The Service is provided “AS IS” without warranties of any kind. We
-              make no warranties regarding the accuracy, reliability, or
-              availability of the Service.
-            </p>
-          </section>
-
-          {/* Section */}
-          <section className="mb-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-teal-600 mb-3 font-mackinac">
-              Limitation on Liability
-            </h2>
-            <p className="text-sm sm:text-base text-gray-800 font-inter leading-relaxed">
-              Health Compass shall not be liable for any damages arising out of
-              your use of the Service, including but not limited to indirect,
-              incidental, or consequential damages.
-            </p>
-          </section>
-
-          {/* Section */}
-          <section className="mb-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-teal-600 mb-3 font-mackinac">
-              Changes to the Terms of Use
-            </h2>
-            <p className="text-sm sm:text-base text-gray-800 font-inter leading-relaxed">
-              We may update these Terms at any time. Changes are effective
-              immediately upon posting and apply to all access and use
-              thereafter.
-            </p>
-          </section>
-
-          {/* Section */}
+          {/* Reusable Section Template */}
+          {[
+            {
+              title: "1. Overview",
+              description:
+                "These Terms of Use (“Terms”) govern your use of the Health Compass web and mobile applications, associated content, and services (collectively, the “Services”).",
+            },
+            {
+              title: "2. Eligibility",
+              description:
+                "You must be at least 18 years old to create an account unless you are under the care of a legal guardian who manages your account. By using our services, you affirm that you are legally capable of entering into this agreement.",
+            },
+            {
+              title: "3. User Responsibilities",
+              description: (
+                <ul className="list-disc list-inside pl-4 text-sm sm:text-base text-gray-600 font-medium space-y-2">
+                  <li>Provide accurate and truthful information</li>
+                  <li>Keep your login credentials secure</li>
+                  <li>
+                    Use the platform only for lawful, personal wellness and
+                    caregiving purposes
+                  </li>
+                  <li>Respect the privacy and rights of others</li>
+                </ul>
+              ),
+            },
+            {
+              title: "4. Acceptable Use",
+              description: (
+                <ul className="list-disc list-inside pl-4 text-sm sm:text-base text-gray-600 font-medium space-y-2">
+                  <li>
+                    Impersonate another person or misrepresent your identity
+                  </li>
+                  <li>Attempt to reverse-engineer or disrupt the platform</li>
+                  <li>Upload harmful, false, or abusive content</li>
+                  <li>
+                    Use the Services in a way that infringes upon the rights of
+                    others
+                  </li>
+                </ul>
+              ),
+            },
+            {
+              title: "5. Medical Disclaimer",
+              description:
+                "Health Compass does not provide medical advice. Our tools and coaching are for informational and wellness support only. They do not replace medical treatment, diagnosis, or professional care. You should always consult a qualified healthcare provider for medical advice or concerns.",
+            },
+            {
+              title: "6. Termination",
+              description:
+                "We reserve the right to suspend or terminate your access to our Services at our discretion, especially in cases of misuse or violation of these Terms.",
+            },
+            {
+              title: "7. Intellectual Property",
+              description:
+                "All content, design, and software associated with Health Compass is the property of Health Compass, LLC. You may not copy, distribute, or reuse any part of the Services without written permission.",
+            },
+            {
+              title: "8. Modifications to These Terms",
+              description:
+                "We may update these Terms as our platform evolves. We will notify users of major changes and post the updated version with a new effective date.",
+            },
+            {
+              title: "9. Governing Law",
+              description:
+                "These Terms are governed by the laws of the State of [Insert State], without regard to conflict of laws principles.",
+            },
+          ].map(({ title, description }, i) => (
+            <section key={i} className="mb-10">
+              <h2 className="text-xl sm:text-2xl font-semibold text-teal-600 mb-3 font-mackinac">
+                {title}
+              </h2>
+              {typeof description === "string" ? (
+                <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed whitespace-pre-line">
+                  {description}
+                </p>
+              ) : (
+                description
+              )}
+            </section>
+          ))}
           <section>
             <h2 className="text-xl sm:text-2xl font-semibold text-teal-600 mb-3 font-mackinac">
-              Contact Information
+              8. Contact Us
             </h2>
             <p className="text-sm sm:text-base text-gray-800 font-inter leading-relaxed">
-              For questions about these Terms of Use, contact us at:{" "}
-              <span className="font-medium">[Your Contact Email Here]</span>
+              For questions or concerns about this Privacy Policy, please
+              contact us at:
+            </p>
+            <p className="text-sm sm:text-base text-gray-600 font-medium font-inter leading-relaxed mt-2">
+              Health Compass, LLC
+              <br />
+              1968 S Coast Hwy PMB 2604
+              <br />
+              Laguna Beach, CA 92651-3681
+              <br />
+              USA
+              <br />
+              <br />
+              Email:{" "}
+              <a
+                href="mailto:ovi@gohealthcompass.com"
+                className="text-teal-700 hover:underline"
+              >
+                ovi@gohealthcompass.com
+              </a>
             </p>
           </section>
         </div>

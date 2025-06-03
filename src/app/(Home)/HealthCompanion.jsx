@@ -93,9 +93,9 @@ const HealthCompanion = ({ className, id }) => {
                 data-aos="fade-up"
                 data-aos-delay="300"
                 onClick={handleOpenForm}
-                className="bg-dark-primary hover:bg-light-primary text-white px-6 py-3 rounded-full text-sm lg:text-base font-semibold transition-colors"
+                className="bg-dark-primary hover:bg-light-primary text-white px-10 py-3 rounded-full text-sm lg:text-base font-semibold transition-colors"
               >
-                Get Started Now
+                Try it Now
               </button>
             </div>
           </div>
