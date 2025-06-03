@@ -82,7 +82,7 @@ const MailchimpForm = memo(({ email, isOpen, onHide }) => {
                   type="text"
                   name="FNAME"
                   className="required w-full rounded-md border border-gray-300 px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  placeholder="Enter your First Name"
+                  placeholder="Enter your first name"
                 />
               </div>
               <div className="mc-field-group mb-8 sm:mb-8">
