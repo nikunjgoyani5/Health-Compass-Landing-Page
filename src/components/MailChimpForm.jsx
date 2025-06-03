@@ -10,19 +10,16 @@ const MailchimpForm = ({ isOpen, onHide }) => {
       <div id="mc_embed_signup">
         {isOpen && (
           <form
-            action="https://gohealthcompass.usx.list-manage.com/subscribe/post?u=XXXXXXX&id=YYYYYYY"
+          action="https://healthcompass.us21.list-manage.com/subscribe/post?u=47d8586b0e8e46084f66c4fbc&amp;id=95a9fd9aa4"
             // action="https://gohealthcompass.us10.list-manage.com/subscribe/post?u=b427fa6815-9e0ee3bd63&id=6cb40504e4"
             method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            className="validate"
             target="_blank"
             noValidate
-            onSubmit={() => {
-              if (window.fbq) {
-                window.fbq("track", "Lead");
-              }
-            }}
+            // onSubmit={() => {
+            //   if (window.fbq) {
+            //     window.fbq("track", "Lead");
+            //   }
+            // }}
           >
             <div id="mc_embed_signup_scroll">
               <h2 className="text-[20px] sm:text-3xl font-semibold relative me-5 mb-3">
@@ -49,7 +46,7 @@ const MailchimpForm = ({ isOpen, onHide }) => {
                 Join the early access list and get exclusive launch updates.
               </p>
 
-              <div className="mc-field-group mb-5 sm:mb-6">
+              {/* <div className="mc-field-group mb-5 sm:mb-6">
                 <label
                   htmlFor="mce-FNAME"
                   className="mb-1 block text-sm font-medium text-text-primary"
@@ -64,7 +61,7 @@ const MailchimpForm = ({ isOpen, onHide }) => {
                   placeholder="Your Name"
                   className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                 />
-              </div>
+              </div> */}
 
               <div className="mc-field-group mb-8 sm:mb-10">
                 <label
@@ -77,11 +74,16 @@ const MailchimpForm = ({ isOpen, onHide }) => {
                   type="email"
                   name="EMAIL"
                   className="required email w-full rounded-md border border-gray-300 px-4 py-2 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  id="mce-EMAIL"
-                  placeholder="Your Email"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
+
+              <input
+                type="hidden"
+                name="TAG"
+                value="Landing Page Lead – May 2025"
+              />
 
               {/* <div id="mce-responses" className="clear">
               <div
@@ -111,9 +113,7 @@ const MailchimpForm = ({ isOpen, onHide }) => {
               <div className="clear">
                 <input
                   type="submit"
-                  value="Subscribe"
-                  name="subscribe"
-                  id="mc-embedded-subscribe"
+                  value="Join Now"
                   className="button btn-teal w-full block cursor-pointer"
                 />
               </div>

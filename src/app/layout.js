@@ -7,6 +7,7 @@ import { createMetadata } from "@/helpers/commonHelpers";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AOSInitializer from "@/components/AOSInitializer";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,37 @@ export const generateMetadata = async () => {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        {/* Meta Pixel Code */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s){
+                if(f.fbq)return;n=f.fbq=function(){
+                  n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+                };
+                if(!f._fbq)f._fbq=n;
+                n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];
+                t=b.createElement(e);t.async=!0;
+                t.src=v;
+                s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)
+              }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '698547848154391');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=698547848154391&ev=PageView&noscript=1"
+          />
+        </noscript>
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -39,7 +71,7 @@ export default function RootLayout({ children }) {
         <Footer />
 
         {/* 📌 Meta Pixel Script */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
+        {/* <Script id="facebook-pixel" strategy="afterInteractive">
           {`
           !function(f,b,e,v,n,t,s) {
             if(f.fbq)return;
@@ -56,13 +88,13 @@ export default function RootLayout({ children }) {
             s.parentNode.insertBefore(t,s)
           }(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', 'YOUR_PIXEL_ID');
+          fbq('init', '698547848154391');
           fbq('track', 'PageView');
         `}
-        </Script>
+        </Script> */}
 
         {/* 📌 noscript fallback for non-JS users */}
-        <noscript
+        {/* <noscript
           dangerouslySetInnerHTML={{
             __html: `
       <img
@@ -73,7 +105,7 @@ export default function RootLayout({ children }) {
       />
     `,
           }}
-        />
+        /> */}
       </body>
     </html>
   );
