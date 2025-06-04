@@ -25,14 +25,14 @@ const Banner = ({ id }) => {
     setVideoReady(true);
     setLoading(false);
     // For mobile devices, we'll let the user tap to play
-    if (!isMobile()) {
-      setTimeout(() => {
-        videoRef.current?.play().catch(error => {
-          console.error("Video play failed:", error);
-          setLoading(false);
-        });
-      }, 100);
-    }
+    // if (!isMobile()) {
+    //   setTimeout(() => {
+    //     videoRef.current?.play().catch(error => {
+    //       console.error("Video play failed:", error);
+    //       setLoading(false);
+    //     });
+    //   }, 100);
+    // }
   }, []);
 
   const handleVideoEnd = useCallback(() => {
@@ -49,7 +49,9 @@ const Banner = ({ id }) => {
 
   // Helper function to detect mobile devices
   const isMobile = () => {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
   };
 
   return (
@@ -148,8 +150,9 @@ const Banner = ({ id }) => {
                       ref={videoRef}
                       onCanPlay={handleVideoReady}
                       onEnded={handleVideoEnd}
-                      autoPlay={!isMobile()} // Only autoplay on non-mobile
+                      autoPlay={true} // Only autoplay on non-mobile
                       playsInline
+                      muted={isMobile()}
                       controls // Always show controls for mobile
                       controlsList="nodownload"
                       className={`h-full w-full object-cover transition-opacity duration-300 object-center ${
