@@ -62,11 +62,13 @@ const Header = () => {
   const isActive = (path) => pathname.includes(path);
 
   useEffect(() => {
+    if(window.scrollY > 40){
+      setIsScrolled(true)
+    }
     const handleScroll = () => {
       const threshold = window.innerWidth < 768 ? 0 : 20;
       setIsScrolled(window.scrollY > threshold);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -76,7 +78,7 @@ const Header = () => {
       if (scrollTimeout.current) {
         clearTimeout(scrollTimeout.current);
       }
-
+      
       scrollTimeout.current = setTimeout(() => {
         const scrollPosition = window.scrollY + window.innerHeight / 2;
         const isDesktop = window.innerWidth >= 768; // Match your md breakpoint

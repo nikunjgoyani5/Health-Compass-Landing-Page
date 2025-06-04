@@ -54,6 +54,8 @@ const Banner = ({ id }) => {
     );
   };
 
+  const resetForm = useCallback(() => setEmail(""), []);
+
   return (
     <>
       <section id={id} className="bg-spring-wood">
@@ -184,7 +186,12 @@ const Banner = ({ id }) => {
         </div>
       </section>
 
-      <MailchimpForm email={email} isOpen={isForm} onHide={handleCloseForm} />
+      <MailchimpForm
+        email={email}
+        isOpen={isForm}
+        onHide={handleCloseForm}
+        resetForm={resetForm}
+      />
     </>
   );
 };

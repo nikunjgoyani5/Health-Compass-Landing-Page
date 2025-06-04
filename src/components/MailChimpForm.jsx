@@ -5,7 +5,7 @@ import Modal from "./common/Modal";
 import { Images } from "@/data/images";
 import Image from "next/image";
 
-const MailchimpForm = memo(({ email, isOpen, onHide }) => {
+const MailchimpForm = memo(({ email, isOpen, onHide, resetForm }) => {
   useEffect(() => {
     // Load Mailchimp validation script
     const script = document.createElement("script");
@@ -45,6 +45,12 @@ const MailchimpForm = memo(({ email, isOpen, onHide }) => {
             // action="https://gohealthcompass.us10.list-manage.com/subscribe/post?u=b427fa6815-9e0ee3bd63&id=6cb40504e4"
             method="post"
             target="_blank"
+            onSubmit={() => {
+              setTimeout(() => {
+                onHide(); // ✅ Close modal shortly after submission
+                resetForm()
+              }, 300); // small delay for better UX
+            }}
           >
             <div id="mc_embed_signup_scroll">
               <h2 className="text-[20px] sm:text-3xl font-semibold relative me-5 mb-3">
