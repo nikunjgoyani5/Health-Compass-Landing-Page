@@ -30,8 +30,8 @@ const Header = () => {
         ],
         taglines: [
           "Personal Health Assistant on Duty",
+          "Personalized Wellness, Simplified",
           "Supplements Simplified For You",
-          "Personal Health Assistant on Duty ",
           "Wellness, Insights, and Daily Support",
         ],
       };
@@ -45,8 +45,8 @@ const Header = () => {
         ],
         taglines: [
           "Personal Health Assistant on Duty",
-          "Personal Health Assistant on Duty ",
           "Supplements Simplified For You",
+          "Personalized Wellness, Simplified",
           "Wellness, Insights, and Daily Support",
         ],
       };
