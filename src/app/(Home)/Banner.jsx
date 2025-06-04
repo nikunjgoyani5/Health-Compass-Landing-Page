@@ -18,14 +18,21 @@ const Banner = ({ id }) => {
   const handleOpen = useCallback(() => {
     setLoading(true);
     setShowVideo(true);
+    setIsVideo(false);
   }, []);
 
   const handleVideoReady = useCallback(() => {
     setVideoReady(true);
     setLoading(false);
-    setTimeout(() => {
-      videoRef.current?.play();
-    }, 100);
+    // For mobile devices, we'll let the user tap to play
+    if (!isMobile()) {
+      setTimeout(() => {
+        videoRef.current?.play().catch(error => {
+          console.error("Video play failed:", error);
+          setLoading(false);
+        });
+      }, 100);
+    }
   }, []);
 
   const handleVideoEnd = useCallback(() => {
@@ -39,6 +46,11 @@ const Banner = ({ id }) => {
   }, []);
 
   const handleCloseForm = useCallback(() => setIsForm(false), []);
+
+  // Helper function to detect mobile devices
+  const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  };
 
   return (
     <>
@@ -106,21 +118,21 @@ const Banner = ({ id }) => {
                       className="mx-auto relative z-[1] w-full h-full"
                       alt="Banner"
                     />
-                    {loading ? (
-                      <div className="absolute top-0 right-0 z-[1] m-4">
-                        <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-                      </div>
-                    ) : (
-                      <button className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-black/10 sm:bg-black/12 backdrop-blur-[64px] px-4 sm:px-4 py-3 sm:py-4 rounded-xl m-4 play-animation">
-                        <Play size={24} />
-                        <span className="text-start hidden">
-                          <span className="block text-sm sm:text-base">
-                            Watch Demo
+                    <button className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-black/10 sm:bg-black/12 backdrop-blur-[64px] px-4 sm:px-4 py-3 sm:py-4 rounded-xl m-4 play-animation">
+                      {loading ? (
+                        <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      ) : (
+                        <>
+                          <Play size={24} />
+                          <span className="text-start hidden">
+                            <span className="block text-sm sm:text-base">
+                              Watch Demo
+                            </span>
+                            <span className="text-xs sm:text-sm">2 min</span>
                           </span>
-                          <span className="text-xs sm:text-sm">2 min</span>
-                        </span>
-                      </button>
-                    )}
+                        </>
+                      )}
+                    </button>
                   </span>
                 ) : (
                   <>
@@ -136,15 +148,20 @@ const Banner = ({ id }) => {
                       ref={videoRef}
                       onCanPlay={handleVideoReady}
                       onEnded={handleVideoEnd}
-                      autoPlay
+                      autoPlay={!isMobile()} // Only autoplay on non-mobile
                       playsInline
-                      controls
+                      controls // Always show controls for mobile
                       controlsList="nodownload"
                       className={`h-full w-full object-cover transition-opacity duration-300 object-center ${
                         videoReady ? "opacity-100" : "opacity-0"
                       }`}
                       src="/video.mp4"
                     />
+                    {loading && (
+                      <div className="absolute inset-0 flex items-center justify-center z-[2]">
+                        <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                      </div>
+                    )}
                   </>
                 )}
               </span>
