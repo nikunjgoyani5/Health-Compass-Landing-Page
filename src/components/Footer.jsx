@@ -32,14 +32,14 @@ export default function Footer() {
             </a>
             <div className="flex flex-row gap-4 mb-1 justify-end">
               <Link
-                target="_blank"
+                // target="_blank"
                 href="/term-of-use"
                 className="text-sm text-alabaster font-normal"
               >
                 <b>Terms of Use</b>
               </Link>
               <Link
-                target="_blank"
+                // target="_blank"
                 href="/privacy-policy"
                 className="text-sm text-alabaster font-normal"
               >

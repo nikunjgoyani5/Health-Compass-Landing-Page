@@ -120,7 +120,7 @@ const Banner = ({ id }) => {
                       <img
                         style={{ objectFit: "cover", objectPosition: "top" }}
                         src={Images.banner}
-                        className="mx-auto relative z-[1] w-full h-full absolute top-0 left-0"
+                        className="mx-auto  z-[1] w-full h-full absolute top-0 left-0"
                         alt="Fallback Banner"
                       />
                     )}
@@ -132,7 +132,7 @@ const Banner = ({ id }) => {
                       playsInline
                       controls
                       controlsList="nodownload"
-                      className={`h-full w-full object-cover transition-opacity duration-300 ${
+                      className={`h-full w-full object-cover transition-opacity duration-300 object-center ${
                         videoReady ? "opacity-100" : "opacity-0"
                       }`}
                       src="/video.mp4"

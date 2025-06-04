@@ -5,29 +5,7 @@ const PrivacyPolicy = () => {
     <div className="min-h-screen bg-spring-wood py-6 sm:py-10 px-4 sm:px-6 lg:px-16">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
-        <div className="mb-1 sm:mb-6">
-          <a
-            href="/"
-            className="text-teal-700 hover:underline flex items-center text-sm sm:text-base"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 sm:h-5 sm:w-5 mr-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Back
-          </a>
-        </div>
-
+       
         {/* Page Title */}
         <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-center text-teal-700 mb-6 sm:mb-10 font-mackinac">
           Privacy Policy
@@ -37,7 +15,7 @@ const PrivacyPolicy = () => {
         <div className="border border-gray-200 rounded-xl p-5 sm:p-8 lg:p-10 space-y-10 bg-white shadow-lg">
           {/* Effective Date */}
           <section>
-            <p className="text-sm sm:text-base text-gray-700 font-inter leading-relaxed">
+          <p className="text-sm sm:text-lg text-gray-600 font-medium mb-4 leading-relaxed">
               <strong className="text-black">Effective Date:</strong> June 3,
               2025
             </p>
