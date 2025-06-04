@@ -12,14 +12,17 @@ const Banner = ({ id }) => {
   const [isVideo, setIsVideo] = useState(true);
   const [videoReady, setVideoReady] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [loading, setLoading] = useState(false);
   const videoRef = useRef(null);
 
   const handleOpen = useCallback(() => {
-    setShowVideo(true); // Show the <video> tag
+    setLoading(true);
+    setShowVideo(true);
   }, []);
 
   const handleVideoReady = useCallback(() => {
-    setVideoReady(true); // Reveal the video only after it's ready
+    setVideoReady(true);
+    setLoading(false);
     setTimeout(() => {
       videoRef.current?.play();
     }, 100);
@@ -103,24 +106,29 @@ const Banner = ({ id }) => {
                       className="mx-auto relative z-[1] w-full h-full"
                       alt="Banner"
                     />
-                    <button className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-black/10 sm:bg-black/12 backdrop-blur-[64px] px-4 sm:px-4 py-3 sm:py-4 rounded-xl m-4 play-animation">
-                      <Play size={24} />
-                      <span className="text-start hidden">
-                        <span className="block text-sm sm:text-base">
-                          Watch Demo
+                    {loading ? (
+                      <div className="absolute top-0 right-0 z-[1] m-4">
+                        <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                      </div>
+                    ) : (
+                      <button className="flex items-center gap-2 sm:gap-3 absolute top-0 right-0 z-[1] text-white font-semibold bg-black/10 sm:bg-black/12 backdrop-blur-[64px] px-4 sm:px-4 py-3 sm:py-4 rounded-xl m-4 play-animation">
+                        <Play size={24} />
+                        <span className="text-start hidden">
+                          <span className="block text-sm sm:text-base">
+                            Watch Demo
+                          </span>
+                          <span className="text-xs sm:text-sm">2 min</span>
                         </span>
-                        <span className="text-xs sm:text-sm">2 min</span>
-                      </span>
-                    </button>
+                      </button>
+                    )}
                   </span>
                 ) : (
                   <>
-                    {/* Show image fallback until video is ready */}
                     {!videoReady && (
                       <img
                         style={{ objectFit: "cover", objectPosition: "top" }}
                         src={Images.banner}
-                        className="mx-auto  z-[1] w-full h-full absolute top-0 left-0"
+                        className="mx-auto z-[1] w-full h-full absolute top-0 left-0"
                         alt="Fallback Banner"
                       />
                     )}
