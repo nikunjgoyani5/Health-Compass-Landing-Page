@@ -3,13 +3,13 @@ import React from "react";
 const TermOfUse = () => {
   return (
     <div className="min-h-screen bg-spring-wood py-6 sm:py-10 px-4 sm:px-6 lg:px-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-teal-700 mb-10 font-mackinac">
+      <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
+        <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-center text-white py-6 sm:py-8 font-mackinac bg-primary">
           Terms of Use
         </h1>
 
         {/* Content Box */}
-        <div className="bg-white shadow-lg border border-gray-300 rounded-xl p-5 sm:p-8 lg:p-10">
+        <div className="bg-white border border-gray-300 rounded-b-xl overflow-hidden p-5 sm:p-8 lg:p-10">
           {/* Section */}
           <section className="mb-10">
             <p className="text-sm sm:text-lg text-gray-600 font-medium mb-4 leading-relaxed">

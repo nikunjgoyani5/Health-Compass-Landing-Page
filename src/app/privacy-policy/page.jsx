@@ -3,19 +3,19 @@ import React from "react";
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-spring-wood py-6 sm:py-10 px-4 sm:px-6 lg:px-16">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
         {/* Back Button */}
-       
+
         {/* Page Title */}
-        <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-center text-teal-700 mb-6 sm:mb-10 font-mackinac">
+        <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-center text-white py-6 sm:py-8 font-mackinac bg-primary">
           Privacy Policy
         </h1>
 
         {/* Content Section */}
-        <div className="border border-gray-200 rounded-xl p-5 sm:p-8 lg:p-10 space-y-10 bg-white shadow-lg">
+        <div className="border border-gray-300 rounded-b-xl p-5 sm:p-8 lg:p-10 space-y-10 bg-white">
           {/* Effective Date */}
           <section>
-          <p className="text-sm sm:text-lg text-gray-600 font-medium mb-4 leading-relaxed">
+            <p className="text-sm sm:text-lg text-gray-600 font-medium mb-4 leading-relaxed">
               <strong className="text-black">Effective Date:</strong> June 3,
               2025
             </p>
