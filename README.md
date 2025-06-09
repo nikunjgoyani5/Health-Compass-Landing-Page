@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Health Compass Landing Page
 
-## Getting Started
+## ✨ Live Demo
 
-First, run the development server:
+[View Live Site](https://health-compass-landing.vercel.app)
+
+---
+
+## 🎨 Figma Design
+
+[Figma Design Link](https://www.figma.com/design/JIOgoWUjzDERKBi7DdjhCu/Health-Compass-Ui?node-id=787-45403&p=f&t=I7D0W20h0Dpf1Ed8-0)
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally on your machine.
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/nikunjgoyani5/Health-Compass-Landing-Page.git
+cd Health-Compass-Landing-Page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Using **npm**:
+```bash
+npm install
+```
+Ya **yarn**:
+```bash
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Run the Project Locally
 
-## Learn More
+Using **npm**:
+```bash
+npm run dev
+```
+Ya **yarn**:
+```bash
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Build for Production
 
-## Deploy on Vercel
+```bash
+npm run build
+npm start
+```
+Ya
+```bash
+yarn build
+yarn start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is currently deployed temporarily at:  
+[https://health-compass-landing.vercel.app/](https://health-compass-landing.vercel.app/)
+
